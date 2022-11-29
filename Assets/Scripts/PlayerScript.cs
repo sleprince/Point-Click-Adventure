@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
         //scene, that ray is called CamToScreen
         Ray camToScreen = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        
+
         //Physics.Raycast, this is a boolean so if the ray hits something all of this
         //code will execute.
         //we pass in our ray, we use Infinity to cover the maximum distance and
@@ -55,11 +55,31 @@ public class PlayerScript : MonoBehaviour
             //if raycast hits something move player.
             if (hit.collider != null)
             {
-                //the hit point is sent over as targetPosition.
-                MovePlayer(hit.point); //hit.point will be where the player moves to.
+                //temporary variable interactive is the Interactable class script that is attached to the the 
+                //object the raycast is hitting.
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+                //if the player has clicked on an interactable beacuse it's not null.
+                if (interactable != null)
+                {
+                    //move player to the interactable *first.
+                    MovePlayer(interactable.InteractPosition());
+                    interactable.Interact(this); //can use "this" because we are sending this playerscript over.
+                }
+                else
+                {   //the hit point is sent over as targetPosition.
+                    MovePlayer(hit.point); //hit.point will be where the player moves to.
+                }
             }
+
         }
 
+    }
+
+    public bool CheckIfArrived()
+    {
+        //true or false that there is no path pending and the agent has arrived.
+        return (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
     }
 
     void MovePlayer(Vector3 targetPosition)
