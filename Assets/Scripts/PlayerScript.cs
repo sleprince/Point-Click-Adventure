@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI; //needed to use Unity's AI functions.
 
@@ -8,6 +9,9 @@ public class PlayerScript : MonoBehaviour
 
     private NavMeshAgent agent;
     private Camera mainCamera;
+
+    private bool turning; //are they turning.
+    private Quaternion targetRot; //rotation value of the target.
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,13 @@ public class PlayerScript : MonoBehaviour
             //0 is left, 1 is right, 2 is middle.
         {
             OnClick();
+        }
+
+        if (turning && transform.rotation != targetRot) //if turning and not rotated towards the target.
+        {
+            //transform towards the target.
+            //15f x time is so that the rotation is smooth all different spec PCs with different framerates.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
         }
     }
 
@@ -84,7 +95,15 @@ public class PlayerScript : MonoBehaviour
 
     void MovePlayer(Vector3 targetPosition)
     {
+        turning = false;
+
         agent.SetDestination(targetPosition);
 
+    }
+
+    public void SetDirection(Vector3 targetDirection)
+    {
+        turning = true;
+        targetRot = Quaternion.LookRotation(targetDirection - transform.position);
     }
 }

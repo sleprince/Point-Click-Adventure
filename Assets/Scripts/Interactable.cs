@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
     {
         //returns where the interactable is located in the scene.
         return transform.position + transform.forward * distancePosition;
-        //transform forward is where the blue transform arrow (z axis) is pointing on the interactable, player will stop facing that.
+        //transform forward is where the blue transform arrow (z axis) is pointing on the interactable.
     }
 
     public void Interact(PlayerScript player)
@@ -30,5 +30,7 @@ public class Interactable : MonoBehaviour
 
         //it will only run the code below when the player arrives.
         Debug.Log("Player arrived");
+
+        player.SetDirection(transform.position);
     }
 }
