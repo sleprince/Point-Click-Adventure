@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MessageAction : Actions
 {
-    [Multiline(5)]
-    [SerializeField] 
-    public string message;
+    [TextArea(5, 3)] //makes the text input field in Editor be multiline and have word wrap.
+    [SerializeField] List<string> message; //now our messages are an array of messages.
 
     public override void Act()
     {
-        Debug.Log(message);
+        //Debug.Log(message);
+        DialogueSystem.Instance.ShowMessages(message);
     }
 }
