@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\BaseClass\Actions.cs" />
+    <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
