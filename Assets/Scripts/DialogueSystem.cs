@@ -14,6 +14,8 @@ public class DialogueSystem : MonoBehaviour
     private List<string> currentMessages = new List<string>();
     private int msgId = 0;
 
+    public bool conversing = false;
+
     private void Awake()
     {
         Instance = this; //for the public staticness of the script.
@@ -30,6 +32,7 @@ public class DialogueSystem : MonoBehaviour
         currentMessages = messages; //we will pass our messages into here from our interactable.
 
         panel.SetActive(true);
+        conversing = true; //bool used so that the player will not be able to move while conversing.
 
         StartCoroutine(ShowMultipleMessages());
     }
@@ -40,7 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
         while(msgId < currentMessages.Count)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) //&& Extensions.IsMouseOverUI())
             {
                 msgId++;
 
@@ -52,6 +55,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
 		panel.SetActive(false);
+        conversing = false;
         msgId = 0;
     }
 }

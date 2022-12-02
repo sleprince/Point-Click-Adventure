@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //if left mouse button clicked.
+        if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing) //if left mouse button clicked.
             //0 is left, 1 is right, 2 is middle.
         {
             OnClick();

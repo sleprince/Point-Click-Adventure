@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\BaseClass\Actions.cs" />
     <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
