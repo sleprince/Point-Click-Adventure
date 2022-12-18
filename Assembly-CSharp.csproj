@@ -56,15 +56,15 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Interactable.cs" />
-    <Compile Include="Assets\Scripts\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\BaseClass\Actions.cs" />
-    <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
-    <Compile Include="Assets\Scripts\DialogueSystem.cs" />
-    <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
-    <Compile Include="Assets\Scripts\BaseClass\Item.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObject\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\CustomInspector\SomeClass.cs" />
+    <Compile Include="Assets\Scripts\BaseClass\Actions.cs" />
+    <Compile Include="Assets\Scripts\BaseClass\Item.cs" />
+    <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
+    <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
