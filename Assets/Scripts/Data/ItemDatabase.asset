@@ -12,5 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7feb54e5524548d419df263d0eab01b2, type: 3}
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
-  items: []
-  itemsNames: []
+  items:
+  - itemId: 0
+    itemName: Key
+    itemDescription: An unlabelled key for an unknown door.
+    itemSprite: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
+    allowMultiple: 0
+    amount: 0
+  - itemId: 1
+    itemName: 
+    itemDescription: 
+    itemSprite: {fileID: 0}
+    allowMultiple: 0
+    amount: 0
+  itemsNames:
+  - 
+  - 

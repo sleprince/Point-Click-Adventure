@@ -5,7 +5,10 @@ public class Item
 {
     [SerializeField] int itemId;
     [SerializeField] string itemName;
+
+    [TextArea(1, 3)]
     [SerializeField] string itemDescription;
+
     [SerializeField] Sprite itemSprite;
     [SerializeField] bool allowMultiple;
     [SerializeField] int amount;

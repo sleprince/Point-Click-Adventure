@@ -18,7 +18,7 @@ public class ItemDatabaseEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        serializedObject.Update(); //so that the new item appears immediately in ispector when added.
+        serializedObject.Update(); //so that the new item appears immediately in ispector when added on the next frame.
 
         //base.OnInspectorGUI();
         if (GUILayout.Button("Add Item")) //adds a button to add item, if clicked a new item is added with an ID number and all the empty fields.
@@ -45,34 +45,35 @@ public class ItemDatabaseEditor : Editor
         EditorGUILayout.LabelField("Item Id:" + item.FindPropertyRelative("itemId").intValue, GUILayout.Width(75f)); //statuc field, cannot change, for ID number.
         //extracting itemId integer value. Set as a very narrow UI field. Width is no. of pixels.
 
-        EditorGUILayout.PropertyField(item.FindPropertyRelative("itemName"));
+        EditorGUILayout.PropertyField(item.FindPropertyRelative("itemName")); //editable field for item name.
 
-        if (GUILayout.Button("X", GUILayout.Width(20f)))
+        if (GUILayout.Button("X", GUILayout.Width(20f))) //small width, delete button.
         {
-            //delete the item
-            s_itemsName.DeleteArrayElementAtIndex(item.FindPropertyRelative("itemId").intValue);
+            //delete the item.
+            s_itemsName.DeleteArrayElementAtIndex(item.FindPropertyRelative("itemId").intValue); //because itemID will always be equal to index.
             s_items.DeleteArrayElementAtIndex(item.FindPropertyRelative("itemId").intValue);
 
-            ReCalculateID();
-            return;
+            ReCalculateID(); //method to recalculate the index when an item is deleted.
+            return; //ignore the rest of the code below to update the item in the next frame.
         }
 
         GUILayout.EndHorizontal();
 
-        EditorGUILayout.PropertyField(item.FindPropertyRelative("itemDescription"));
+        EditorGUILayout.PropertyField(item.FindPropertyRelative("itemDescription")); //GUILayout.Height(35f)); //editable field for item description.
 
         GUILayout.BeginHorizontal();
         item.FindPropertyRelative("itemSprite").objectReferenceValue = EditorGUILayout.ObjectField("Item Sprite: ",
-            item.FindPropertyRelative("itemSprite").objectReferenceValue, typeof(Sprite), false);
+            item.FindPropertyRelative("itemSprite").objectReferenceValue, typeof(Sprite), false); //to make the image appear in the inspector.
+        //only allowed from asset folder.
         EditorGUILayout.PropertyField(item.FindPropertyRelative("allowMultiple"));
         GUILayout.EndHorizontal();
 
         GUILayout.EndVertical();
     }
 
-    void ReCalculateID()
+    void ReCalculateID() 
     {
-        for (int i = 0; i < s_items.arraySize; i++)
+        for (int i = 0; i < s_items.arraySize; i++) //corrects all the item IDs, if you delete one in the middle.
         {
             s_items.GetArrayElementAtIndex(i).FindPropertyRelative("itemId").intValue = i;
             s_itemsName.GetArrayElementAtIndex(i).stringValue = 
