@@ -11,17 +11,17 @@ public class ItemDatabaseEditor : Editor
 
     private void OnEnable()
     {
-        source = (ItemDatabase)target;
+        source = (ItemDatabase)target; //get item database.
         s_items = serializedObject.FindProperty("items");
         s_itemsName = serializedObject.FindProperty("itemsNames");
     }
 
     public override void OnInspectorGUI()
     {
-        serializedObject.Update();
+        serializedObject.Update(); //so that the new item appears immediately in ispector when added.
 
         //base.OnInspectorGUI();
-        if (GUILayout.Button("Add Item"))
+        if (GUILayout.Button("Add Item")) //adds a button to add item, if clicked a new item is added with an ID number and all the empty fields.
         {
             Item newItem = new Item(s_items.arraySize, "", "", null, false); //item id is arraysize because it will start at 0 and increase as items added.
             source.AddItem(newItem);
@@ -33,7 +33,7 @@ public class ItemDatabaseEditor : Editor
             DrawItemEntry(s_items.GetArrayElementAtIndex(i));
         }
 
-        serializedObject.ApplyModifiedProperties();
+        serializedObject.ApplyModifiedProperties(); //so that the changes made in the inspector get saved.
     }
 
     void DrawItemEntry(SerializedProperty item)
@@ -42,7 +42,9 @@ public class ItemDatabaseEditor : Editor
 
         GUILayout.BeginHorizontal();
 
-        EditorGUILayout.LabelField("Item Id:" + item.FindPropertyRelative("itemId").intValue, GUILayout.Width(75f));
+        EditorGUILayout.LabelField("Item Id:" + item.FindPropertyRelative("itemId").intValue, GUILayout.Width(75f)); //statuc field, cannot change, for ID number.
+        //extracting itemId integer value. Set as a very narrow UI field. Width is no. of pixels.
+
         EditorGUILayout.PropertyField(item.FindPropertyRelative("itemName"));
 
         if (GUILayout.Button("X", GUILayout.Width(20f)))
