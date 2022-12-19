@@ -63,9 +63,9 @@
     <Compile Include="Assets\Scripts\ScriptableObject\ItemDatabase.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject\Inventory.cs" />
     <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
     <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObject\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -8,7 +8,7 @@ public class ItemDatabase : ScriptableObject
     [SerializeField] List<Item> items = new List<Item>();
     [SerializeField] List<string> itemsNames = new List<string>();
 
-    public List<string> ItemsNames { get { return itemsNames; } }
+    public List<string> ItemsNames { get { return itemsNames; } } //public getter.
 
     public void AddItem(Item item)
     {
@@ -16,7 +16,7 @@ public class ItemDatabase : ScriptableObject
         ItemsNames.Add("");
     }
 
-    public Item GetItem(int id)
+    public Item GetItem(int id) //return item from ID number passed in.
     {
         for (int i = 0; i < items.Count; i++)
         {
@@ -25,7 +25,7 @@ public class ItemDatabase : ScriptableObject
                 return items[i];
             }
         }
-        return null;
+        return null; //else returns null if that item is not found in the database.
     }
 
 }//class end.

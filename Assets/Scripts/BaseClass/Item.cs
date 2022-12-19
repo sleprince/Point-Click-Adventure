@@ -23,11 +23,12 @@ public class Item
         this.allowMultiple = allowMultiple;
     }
 
-    public int ItemId { get { return itemId; } }
+    public int ItemId { get { return itemId; } } //public getter, to get the private serializedfields defined above.
+    //capital I to differentiate that it is a property and the lowercase i is a variable.
     public string ItemName { get { return itemName; } }
     public string ItemDesc { get { return itemDescription; } }
     public Sprite ItemSprite { get { return itemSprite; } }
-    public bool AllowMultple { get { return allowMultiple; } }
+    public bool AllowMultiple { get { return allowMultiple; } }
     public int Amount { get { return amount; } }
 
     public void ModifyAmount(int value)

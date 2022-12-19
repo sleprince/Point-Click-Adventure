@@ -33,6 +33,9 @@ public class ItemDatabaseEditor : Editor
             DrawItemEntry(s_items.GetArrayElementAtIndex(i));
         }
 
+        if (GUI.changed)
+            ReCalculateID(); //without this the changes are not reflected in the inventory.
+
         serializedObject.ApplyModifiedProperties(); //so that the changes made in the inspector get saved.
     }
 
