@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     private bool turning; //are they turning.
     private Quaternion targetRot; //rotation value of the target.
 
+    private LineRenderer line;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,8 @@ public class PlayerScript : MonoBehaviour
         //getting the reference to the MainCamera in the scene.
         //need to make sure the camera is tagged as MainCamera in editor.
         mainCamera = Camera.main;
+
+        line = GetComponent<LineRenderer>();
 
     }
 
@@ -52,9 +56,11 @@ public class PlayerScript : MonoBehaviour
         RaycastHit hit; 
 
         //camToScreen is a variable of type Ray which is the Ray being cast.
-        //ScreenPointToRay, this is from our screen position, it shoots a ray onto our
-        //scene, that ray is called CamToScreen
+        //ScreenPointToRay, this is from our screen position (mouse clicked position), it shoots a ray onto our
+        //scene, that ray is called CamToScreen. Ray starts at camera and goes to mouse position.
         Ray camToScreen = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+
 
 
         //Physics.Raycast, this is a boolean so if the ray hits something all of this
@@ -63,24 +69,48 @@ public class PlayerScript : MonoBehaviour
         //out passes all the information into hit that is used below such as hit.point
         if (Physics.Raycast(camToScreen, out hit, Mathf.Infinity))
         {
+            //trying to make the ray visible for learning purposes.
+            Debug.DrawLine(transform.position, hit.point, Color.blue);
+
+            Debug.DrawRay(mainCamera.transform.position, hit.point, Color.green);
+
+
             //if raycast hits something move player.
             if (hit.collider != null)
             {
+
+
+
                 //temporary variable interactive is the Interactable class script that is attached to the the 
                 //object the raycast is hitting.
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                //if the player has clicked on an interactable beacuse it's not null.
-                if (interactable != null)
-                {
-                    //move player to the interactable *first.
-                    MovePlayer(interactable.InteractPosition());
-                    interactable.Interact(this); //can use "this" because we are sending this playerscript over.
-                }
-                else
-                {   //the hit point is sent over as targetPosition.
-                    MovePlayer(hit.point); //hit.point will be where the player moves to.
-                }
+                    //if the player has clicked on an interactable beacuse it's not null.
+                    if (interactable != null)
+                    {
+                        //move player to the interactable *first.
+                        MovePlayer(interactable.InteractPosition());
+                        interactable.Interact(this); //can use "this" because we are sending this playerscript over.
+                    }
+                    else
+                    {   //the hit point is sent over as targetPosition.
+                        MovePlayer(hit.point); //hit.point will be where the player moves to.
+
+
+                    }
+
+                line.enabled = true;
+                line.SetPosition(0, transform.position);
+                line.SetPosition(1, hit.point);
+                Invoke("DeleteLine", 0.5f);
+
+
+            }
+
+            else
+            {
+
+                line.enabled = false;
             }
 
         }
@@ -106,4 +136,11 @@ public class PlayerScript : MonoBehaviour
         turning = true;
         targetRot = Quaternion.LookRotation(targetDirection - transform.position);
     }
+
+    public void DeleteLine()
+    {
+        line.enabled = false;
+    }
+
+
 }
