@@ -39,7 +39,7 @@ public class Inventory : ScriptableObject
         return 0;
     }
 
-    public void ModifyItemAmount(Item item, int amount)
+    public void ModifyItemAmount(Item item, int amount, bool give = false)
     {
         for (int i = 0; i < inventory.Count; i++)
         {
@@ -47,9 +47,9 @@ public class Inventory : ScriptableObject
             {
                 if (inventory[i].AllowMultiple)
                 {
-                    inventory[i].ModifyAmount(-amount);
+                    inventory[i].ModifyAmount(give ? -amount : amount); //if true subtract amount, if false add.
 
-                    if (inventory[i].Amount <= 0)
+                    if (inventory[i].Amount <= 0 && give)
                         inventory.RemoveAt(i);
                 }
                 else
@@ -57,7 +57,6 @@ public class Inventory : ScriptableObject
                     inventory.RemoveAt(i);
                 }
 
-                OnItemChange(inventory);
                 return;
             }
         }

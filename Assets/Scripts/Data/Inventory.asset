@@ -25,7 +25,7 @@ MonoBehaviour:
     itemDescription: Delicious chicken dinner.
     itemSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     allowMultiple: 1
-    amount: 0
+    amount: 3
   - itemId: 2
     itemName: USB stick
     itemDescription: Contains newly supplied content for the dinosaur's unleashed
