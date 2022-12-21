@@ -13,7 +13,9 @@ public class PlayerScript : MonoBehaviour
     private bool turning; //are they turning.
     private Quaternion targetRot; //rotation value of the target.
 
-    private LineRenderer line;
+    private LineRenderer line; //to give a pseudo visual of what the raycast is doing.
+
+    [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
     // Start is called before the first frame update
     void Start()
@@ -69,10 +71,9 @@ public class PlayerScript : MonoBehaviour
         //out passes all the information into hit that is used below such as hit.point
         if (Physics.Raycast(camToScreen, out hit, Mathf.Infinity))
         {
-            //trying to make the ray visible for learning purposes.
-            Debug.DrawLine(transform.position, hit.point, Color.blue);
 
-            Debug.DrawRay(mainCamera.transform.position, hit.point, Color.green);
+            effect.transform.position = hit.point; //move particle effect to ray hit point and play.
+            effect.Play();
 
 
             //if raycast hits something move player.
@@ -109,7 +110,7 @@ public class PlayerScript : MonoBehaviour
 
             else
             {
-
+                effect.Stop();
                 line.enabled = false;
             }
 
@@ -140,6 +141,7 @@ public class PlayerScript : MonoBehaviour
     public void DeleteLine()
     {
         line.enabled = false;
+        effect.Stop();
     }
 
 
