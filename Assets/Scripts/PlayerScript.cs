@@ -130,6 +130,8 @@ public class PlayerScript : MonoBehaviour
 
         agent.SetDestination(targetPosition);
 
+        DialogueSystem.Instance.HideDialog();
+
     }
 
     public void SetDirection(Vector3 targetDirection)
