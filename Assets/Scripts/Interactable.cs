@@ -1,11 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField] Actions[] actions;
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
+
+    NavMeshAgent agent;
+
+    void Start()
+    {
+
+        agent = PlayerScript.FindObjectOfType<NavMeshAgent>();
+
+    }
 
     public Vector3 InteractPosition()
     {
@@ -32,7 +42,13 @@ public class Interactable : MonoBehaviour
         //it will only run the code below when the player arrives.
         Debug.Log("Player arrived");
 
+        //move player back here
+
+        player.Agent.destination = agent.destination + (new Vector3(0, 0, 0.2f));
+
         player.SetDirection(transform.position);
+
+
 
         for (int i = 0; i < actions.Length; i++)
         {

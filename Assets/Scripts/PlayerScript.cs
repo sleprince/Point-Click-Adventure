@@ -17,6 +17,8 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
+    public NavMeshAgent Agent { get { return agent; } } //public getter.
+
     // Start is called before the first frame update
     void Start()
     {

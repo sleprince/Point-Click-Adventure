@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
@@ -21,21 +22,42 @@ public class DialogueSystem : MonoBehaviour
     //used to stop player being able to walk around while talking.
     public bool conversing = false;
 
+    
+
+    private int convo;
+
     private void Awake()
     {
         Instance = this; //for the public staticness of the script.
+
+
     }
 
     // Use this for initialization
     void Start ()
     {
-        panel.SetActive(false);	//so that dialogue panel is not visible to begin with.
-	}
+        panel.SetActive(false); //so that dialogue panel is not visible to begin with.
+
+
+        convo = -1;
+
+    }
 
     public void ShowMessages(List<string> messages, bool dialogue, List<Actions> yesActions = null, List<Actions> noActions = null, string yes = "Yes", string no = "No")
     // = null is so that when there are no yes,no actions in the dialog we don't have to send anything over.
     {
+
+
+        if (convo == -1)
+        {  //move player slightly at start of conversation, to fix bug where it keeps showing same message.
+            
+            convo = 0;
+        }
+
+
         msgId = 0;
+
+
 
         yesButton.transform.parent.gameObject.SetActive(false);
 
@@ -78,7 +100,7 @@ public class DialogueSystem : MonoBehaviour
     {
         messageText.text = currentMessages[msgId]; //changing the TMP text to be the current message.
 
-        if (msgId == currentMessages.Count) //if it was the last message last time, reset message ID and don't do anything else.
+        if (msgId == currentMessages.Count -1) //if it was the last message last time, reset message ID and don't do anything else.
         {
             msgId = 0;
             //yield return null;
@@ -101,6 +123,9 @@ public class DialogueSystem : MonoBehaviour
                                                                            //hide entire dialogue panel when we setactive to false.
                     //msgId = 0;
                 }
+
+                //if (!useDialogue && msgId == currentMessages.Count - 1 || useDialogue && msgId == currentMessages.Count - 1)
+                        //move player back to solve bug.
 
 
                 
@@ -131,6 +156,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void HideDialog() //for if you walk off during the dialogue.
     {
+        conversing = false;
         panel.SetActive(false);
     }
 
