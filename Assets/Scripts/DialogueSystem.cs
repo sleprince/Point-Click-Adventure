@@ -22,9 +22,7 @@ public class DialogueSystem : MonoBehaviour
     //used to stop player being able to walk around while talking.
     public bool conversing = false;
 
-    
 
-    private int convo;
 
     private void Awake()
     {
@@ -39,20 +37,13 @@ public class DialogueSystem : MonoBehaviour
         panel.SetActive(false); //so that dialogue panel is not visible to begin with.
 
 
-        convo = -1;
+
 
     }
 
     public void ShowMessages(List<string> messages, bool dialogue, List<Actions> yesActions = null, List<Actions> noActions = null, string yes = "Yes", string no = "No")
     // = null is so that when there are no yes,no actions in the dialog we don't have to send anything over.
     {
-
-
-        if (convo == -1)
-        {  //move player slightly at start of conversation, to fix bug where it keeps showing same message.
-            
-            convo = 0;
-        }
 
 
         msgId = 0;
