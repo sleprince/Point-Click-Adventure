@@ -14,7 +14,6 @@ public class Interactable : MonoBehaviour
     {
 
         agent = PlayerScript.FindObjectOfType<NavMeshAgent>();
-
     }
 
     public Vector3 InteractPosition()

@@ -27,7 +27,7 @@ public class DialogueSystem : MonoBehaviour
     private void Awake()
     {
         Instance = this; //for the public staticness of the script.
-
+        
 
     }
 
