@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(ActivateActions))]
 public class ActivateActionsEditor : Editor
 {
-    SerializedProperty customGOList;
+    SerializedProperty customGOList; //because it is a serialize field.
 
     private void OnEnable()
     {
@@ -17,7 +17,7 @@ public class ActivateActionsEditor : Editor
     {
         serializedObject.Update();
 
-        if (GUILayout.Button("Add Entry"))
+        if (GUILayout.Button("Add Entry")) //add button, add new element to list.
         {
             customGOList.InsertArrayElementAtIndex(customGOList.arraySize);
         }
@@ -32,13 +32,15 @@ public class ActivateActionsEditor : Editor
         for (int i = 0; i < customList.arraySize; i++)
         {
             GUILayout.BeginHorizontal("box");
-
-            EditorGUILayout.PropertyField(customList.GetArrayElementAtIndex(i).FindPropertyRelative("gO"), new GUIContent("GameObject:"));
+            
+            //getting the elements from the list.
+            EditorGUILayout.PropertyField(customList.GetArrayElementAtIndex(i).FindPropertyRelative("gO"), new GUIContent("GameObject:")); //is label.
 
             GUILayout.BeginVertical(GUILayout.Width(25f));
             EditorGUILayout.PropertyField(customList.GetArrayElementAtIndex(i).FindPropertyRelative("activeStatus"), GUIContent.none ,GUILayout.Width(25f));
+            //GUIContent.none is so that no label is rendered.
 
-            if (GUILayout.Button("x", GUILayout.Width(20f)))
+            if (GUILayout.Button("x", GUILayout.Width(20f))) //delete button, delete element from list.
             {
                 customList.DeleteArrayElementAtIndex(i);
             }
