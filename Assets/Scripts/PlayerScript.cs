@@ -15,6 +15,11 @@ public class PlayerScript : MonoBehaviour
 
     private LineRenderer line; //to give a pseudo visual of what the raycast is doing.
 
+    private PlayerAnimation playerAnim = new PlayerAnimation(); //with this way of doing it we don't need to attach the
+    //animator in the editor.
+
+    [SerializeField] private Animator pAnim;
+
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
     public NavMeshAgent Agent { get { return agent; } } //public getter.
@@ -31,6 +36,11 @@ public class PlayerScript : MonoBehaviour
         mainCamera = Camera.main;
 
         line = GetComponent<LineRenderer>();
+        
+        playerAnim.Init(GetComponentInChildren<Animator>()); //will search for components of type animator, since it's a
+        //method we need to add parenthesis.
+        
+        //playerAnim.Init(pAnim);
 
     }
 
@@ -49,6 +59,10 @@ public class PlayerScript : MonoBehaviour
             //15f x time is so that the rotation is smooth all different spec PCs with different framerates.
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
         }
+        
+        //playerAnim
+        playerAnim.UpdateAnimation(agent.velocity.sqrMagnitude); //to get float of movement speed from agent, don't need
+        //magnitude normal version as sqr is near enough.
     }
 
     void OnClick()
