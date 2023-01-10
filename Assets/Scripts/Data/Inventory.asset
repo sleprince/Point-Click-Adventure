@@ -32,4 +32,4 @@ MonoBehaviour:
     itemDescription: Delicious chicken dinner.
     itemSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     allowMultiple: 1
-    amount: 1
+    amount: 5
