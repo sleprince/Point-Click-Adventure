@@ -59,6 +59,8 @@
      <Compile Include="Assets\Scripts\Actions\ItemActions.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
+     <Compile Include="Assets\Scripts\InventoryUI\InventoryItemUI.cs" />
+     <Compile Include="Assets\Scripts\InventoryUI\InventorySystemUI.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\chain2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -113,6 +115,7 @@
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_b" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\mechanic" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\InventoryUI" />
      <Folder Include="Assets\simple modular human\scripts" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\glasses1" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\jacket" />
