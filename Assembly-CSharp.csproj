@@ -49,7 +49,9 @@
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\ScriptableObject\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\InventoryUI\InventorySystemUI.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+     <Compile Include="Assets\Scripts\InventoryUI\InventoryItemUI.cs" />
      <Compile Include="Assets\Scripts\ScriptableObject\Inventory.cs" />
      <Compile Include="Assets\Scripts\Actions\ActivateActions.cs" />
      <Compile Include="Assets\Scripts\Actions\MessageAction.cs" />
@@ -59,8 +61,6 @@
      <Compile Include="Assets\Scripts\Actions\ItemActions.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
-     <Compile Include="Assets\Scripts\InventoryUI\InventoryItemUI.cs" />
-     <Compile Include="Assets\Scripts\InventoryUI\InventorySystemUI.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\chain2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -100,6 +100,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\EverydayMotionPackFree\Motion" />
      <Folder Include="Assets\Scripts\Actions" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\animation\male" />
      <Folder Include="Assets\EverydayMotionPackFree\Motion\02_Move" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -178,6 +179,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Scripts\Extensions" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\farmer_suit" />
+     <Folder Include="Assets\Prefabs\InventoryUI" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\AddOns\Mg3D_Hats\Hats_ReadMe.txt" />
      <Folder Include="Assets\Materials" />

@@ -8,14 +8,14 @@ public class Inventory : ScriptableObject
     [SerializeField] ItemDatabase itemDatabase; //need the itemdatabase data to create each inventory entry.
     [SerializeField] List<Item> inventory = new List<Item>();
 
-    public event System.Action<List<Item>> OnItemChange = delegate { };
+    public event System.Action<List<Item>> OnItemChange = delegate { }; //16:00, lesson 38.
 
     public List<Item> GetInventory { get { return inventory; } }
 
     public void AddItem(Item item)
     {
         inventory.Add(item);
-        OnItemChange(inventory);
+        OnItemChange(inventory); //the public event defined above.
     }
 
     public ItemDatabase ItemDatabase { get { return itemDatabase; } } //public getter.
@@ -56,7 +56,8 @@ public class Inventory : ScriptableObject
                 {
                     inventory.RemoveAt(i);
                 }
-
+                
+                OnItemChange(inventory); //the public event defined above.
                 return;
             }
         }
@@ -65,7 +66,7 @@ public class Inventory : ScriptableObject
         newItem.ModifyAmount(amount);
 
         AddItem(newItem);
-        OnItemChange(inventory);
+        OnItemChange(inventory); //the public event defined above.
     }
 
     public void UpdateInventory(List<int> itemsId)
