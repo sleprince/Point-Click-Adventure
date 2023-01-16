@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Actions\ItemActions.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
+     <Compile Include="Assets\OnMouseOverLabel.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\chain2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
