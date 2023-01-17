@@ -1,19 +1,28 @@
 
 //Attach this script to a GameObject to have it output messages when your mouse hovers over it.
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class OnMouseOverLabel : MonoBehaviour
 {
 
-    private GameObject labelText;
+    private GameObject _labelText;
+    private bool _viewAll;
 
     void Start()
     {
-        labelText = GameObject.Find("Button");
+        _labelText = GameObject.Find("Button");
         
-        labelText.SetActive(false);
+        _labelText.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Tab))
+            _labelText.SetActive(true);
+        else if (Input.GetKeyUp(KeyCode.Tab))
+            _labelText.SetActive(false);
+        
+
     }
     
     void OnMouseOver()
@@ -21,7 +30,7 @@ public class OnMouseOverLabel : MonoBehaviour
         //If your mouse hovers over the GameObject with the script attached, output this message
         Debug.Log("Mouse is over GameObject.");
 
-        labelText.SetActive(true);
+        _labelText.SetActive(true);
     }
 
     void OnMouseExit()
@@ -29,6 +38,6 @@ public class OnMouseOverLabel : MonoBehaviour
         //The mouse is no longer hovering over the GameObject so output this message each frame
         Debug.Log("Mouse is no longer on GameObject.");
         
-        labelText.SetActive(false);
+        _labelText.SetActive(false);
     }
 }
