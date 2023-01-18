@@ -79,6 +79,7 @@
      <Folder Include="Assets\EverydayMotionPackFree\Motion\04_Interaction" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <Folder Include="Assets\simple modular human\texture_materials\skins" />
+     <Folder Include="Assets\Pixel Cursors\Demo" />
      <None Include="Assets\AddOns\Mg3D_Food\Food_ReadMe.txt" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\models\Materials" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo" />
@@ -111,6 +112,7 @@
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\models" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\cap2" />
      <Folder Include="Assets\Scripts\Manager" />
+     <Folder Include="Assets\Pixel Cursors" />
      <Folder Include="Assets\EverydayMotionPackFree\Model\Prop\Materials" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\cap3" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -124,6 +126,7 @@
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\prefabs" />
      <Folder Include="Assets\simple modular human\scene" />
      <Folder Include="Assets\Scripts\BaseClass" />
+     <Folder Include="Assets\TextureImportTools" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes3" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_a" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_c" />
@@ -178,6 +181,7 @@
      <Folder Include="Assets\EverydayMotionPackFree" />
      <Folder Include="Assets\Animators" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Pixel Cursors\Cursors" />
      <Folder Include="Assets\Scripts\Extensions" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\farmer_suit" />
      <Folder Include="Assets\Prefabs\InventoryUI" />
@@ -199,6 +203,7 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\robber_suit" />
+     <None Include="Assets\TextureImportTools\Readme.txt" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

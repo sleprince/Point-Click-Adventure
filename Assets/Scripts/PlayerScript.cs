@@ -23,6 +23,20 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
     public NavMeshAgent Agent { get { return agent; } } //public getter.
+    
+    public Texture2D cursorTexture; //these 3 parameters are for custom mouse cursor for look, pick up etc.
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+    
+    void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
+
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+    }
 
     // Start is called before the first frame update
     void Start()
