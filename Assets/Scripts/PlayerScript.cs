@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI; //needed to use Unity's AI functions.
 
@@ -27,7 +28,11 @@ public class PlayerScript : MonoBehaviour
     public Texture2D cursorTexture; //these 3 parameters are for custom mouse cursor for look, pick up etc.
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
-    
+    private int i = -1;
+
+    public List<MouseOptions> mouseOptions = new List<MouseOptions>();
+
+    /*
     void OnMouseEnter()
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
@@ -37,6 +42,7 @@ public class PlayerScript : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -55,12 +61,23 @@ public class PlayerScript : MonoBehaviour
         //method we need to add parenthesis.
         
         //playerAnim.Init(pAnim);
+        
+        Cursor.SetCursor(mouseOptions[3].cursor, hotSpot, cursorMode); //set cursor to walk to start with.
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(1)) //right mouse button to cycle between different cursors for different action types.
+        {
+            i++;
+            if (i == 4)
+                i = 0;
+            Cursor.SetCursor(mouseOptions[i].cursor, hotSpot, cursorMode);
+        }
+        
+        
         if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing) //if left mouse button clicked.
             //0 is left, 1 is right, 2 is middle.
         {
@@ -176,5 +193,16 @@ public class PlayerScript : MonoBehaviour
         effect.Stop();
     }
 
+    [System.Serializable]
+    public class MouseOptions
 
-}
+    {
+        public  Texture2D cursor;
+        public  string cursorType;
+
+
+
+
+    } 
+} //class end
+

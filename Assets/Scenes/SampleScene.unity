@@ -7479,7 +7479,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 200, z: 163.1}
+  m_Size: {x: 75, y: 200, z: 163.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1237648235
 MonoBehaviour:
@@ -8616,6 +8616,15 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: fe2443101ded6f544b32f8dc8690c367, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+  mouseOptions:
+  - cursor: {fileID: 2800000, guid: fe2443101ded6f544b32f8dc8690c367, type: 3}
+    cursorType: Look
+  - cursor: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    cursorType: Talk
+  - cursor: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+    cursorType: Pick Up
+  - cursor: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+    cursorType: Walk
 --- !u!120 &1694820013
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -8894,7 +8903,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 3.04
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
