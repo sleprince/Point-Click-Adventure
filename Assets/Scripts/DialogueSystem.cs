@@ -87,6 +87,29 @@ public class DialogueSystem : MonoBehaviour
 
     }
 
+    public void InspectMessage(List<string> messages)
+    {
+        
+        msgId = 0;
+
+
+
+        yesButton.transform.parent.gameObject.SetActive(false);
+
+        currentMessages = messages; //we will pass our messages into here from our interactable.
+
+        panel.SetActive(true);
+
+        conversing = true; //bool used so that the player will not be able to move while conversing.
+
+        bool dialogue = false;
+
+        StartCoroutine(ShowMultipleMessages(dialogue));
+
+
+
+
+    }
     IEnumerator ShowMultipleMessages(bool useDialogue)
     {
         messageText.text = currentMessages[msgId]; //changing the TMP text to be the current message.

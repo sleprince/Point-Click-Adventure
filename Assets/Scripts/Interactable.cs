@@ -1,19 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField] Actions[] actions;
+
+    //public List<ActionTypes> actionTypes = new List<ActionTypes>(4); 
+    
+    [SerializeField] MessageAction[] messageActions;
+    [SerializeField] InspectAction[] inspectActions;
+    [SerializeField] ActivateActions[] activateActions;
+    [SerializeField] ItemActions[] itemActions;
+
+
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
+
+    [SerializeField] private PlayerScript _playerScript;
 
     void Start()
     {
 
         agent = PlayerScript.FindObjectOfType<NavMeshAgent>();
+
+
     }
 
     public Vector3 InteractPosition()
@@ -53,5 +67,40 @@ public class Interactable : MonoBehaviour
         {
             actions[i].Act();
         }
+
+        //0 = Look
+        //1 = Talk
+        //2 = Use
+        //3 = Walk/pick up
+        
+        
+        if (_playerScript.I == 0)
+        {
+            for (int i = 0; i < inspectActions.Length; i++)
+            {
+                inspectActions[i].Act();
+            }
+        }
+        
+        if (_playerScript.I == 1)
+        {
+            for (int i = 0; i < messageActions.Length; i++)
+            {
+                messageActions[i].Act();
+            }
+        }
+        
     }
-}
+
+    /*
+    [System.Serializable]
+    public class ActionTypes
+    {
+        [SerializeField] MessageAction[] messageActions;
+        [SerializeField] InspectAction[] inspectActions;
+        [SerializeField] ActivateActions[] activateActions;
+        [SerializeField] ItemActions[] itemActions;
+    }
+    */
+    
+}//class end

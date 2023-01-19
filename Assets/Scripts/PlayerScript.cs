@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
 
     public List<MouseOptions> mouseOptions = new List<MouseOptions>();
 
+    public int I { get { return i; } }
     /*
     void OnMouseEnter()
     {
@@ -75,6 +76,8 @@ public class PlayerScript : MonoBehaviour
             if (i == 4)
                 i = 0;
             Cursor.SetCursor(mouseOptions[i].cursor, hotSpot, cursorMode);
+            
+
         }
         
         
