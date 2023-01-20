@@ -9421,7 +9421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 2085307410}
+  - {fileID: 2085307413}
   messageActions:
   - {fileID: 2085307410}
   inspectActions:
