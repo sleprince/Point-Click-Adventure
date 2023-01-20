@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -16,7 +17,6 @@ public class Interactable : MonoBehaviour
     [SerializeField] InspectAction[] inspectActions;
     [SerializeField] ActivateActions[] activateActions;
     [SerializeField] ItemActions[] itemActions;
-    
 
 
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
@@ -75,11 +75,18 @@ public class Interactable : MonoBehaviour
             Actions[] inspect = actions.OfType<InspectAction>().ToArray();
             Actions[] message = actions.OfType<MessageAction>().ToArray();
 
+            //creates an array of arrays
+            Actions[][] allActions = new Actions[4][];
+
+            allActions[0] = inspect;
+            allActions[1] = message;
+            
+
             if (_playerScript.I == 0)
             {
                 for (int j = 0; j < inspect.Count(); j++)
                 {
-                    inspect[j].Act();
+                    allActions[0][j].Act();
                 }
             }
 
@@ -87,9 +94,25 @@ public class Interactable : MonoBehaviour
             {
                 for (int k = 0; k < message.Count(); k++)
                 {
-                    message[k].Act();
+                    allActions[1][k].Act();
                 }
             }
+            
+            
+            
+            Dictionary<ArrayNames, Actions[]> actors = new Dictionary<ArrayNames, Actions[]>();  
+        
+            //loop through the dictionary and call the actions.Act for each array
+            foreach(KeyValuePair<ArrayNames, Actions[]> actor in actors){
+                //loop through the array
+                foreach(Actions act in actor.Value){
+                    //do something with the action
+                    act.Act();
+                }
+        
+            }
+            
+
 
 
 
@@ -170,5 +193,15 @@ public class Interactable : MonoBehaviour
         [SerializeField] ItemActions[] itemActions;
     }
     */
+    
+
+
+        
+    //Samething but use a Dictionary instead of an array and enums instead of strings
+    public enum ArrayNames{
+        
+        message,
+        inspect
+    }
     
 }//class end
