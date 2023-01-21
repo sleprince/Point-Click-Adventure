@@ -17,6 +17,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] Actions[] activateActions;
     [SerializeField] Actions[] itemActions;
     
+    private NullResponses nullresponses; //holds the array of messages that will show at random when you try and do
+    //an invalid interaction.
+    
     //Interactable.IAction [] inspectActions;
 
 
@@ -31,6 +34,9 @@ public class Interactable : MonoBehaviour
 
         agent = PlayerScript.FindObjectOfType<NavMeshAgent>();
         pScript = PlayerScript.FindObjectOfType<PlayerScript>();
+
+        nullresponses = Resources.Load<NullResponses>("ScriptableObjects/ResponseDatabase");
+        
 
 
     }
@@ -93,6 +99,14 @@ public class Interactable : MonoBehaviour
 
                 if (pScript.I == i) // _playerScript.I is the int that determines which type of mouse cursor is being used
                 {
+                    
+                    if (allActions[i].Any() == false) //if there are no actions of that type.
+                    {
+                        DialogueSystem.Instance.InspectMessage(nullresponses.Responses); //play a null response message.
+                        //shuffle list before.
+                    }
+                    
+                    
                     for (int j = 0; j < allActions[i].Count(); j++) //the count of actions for that category
                     {
                         if (allActions[i][j] != null) //if there are any of the type of actions
@@ -100,6 +114,7 @@ public class Interactable : MonoBehaviour
                             allActions[i][j].Act(); //do the actions
 
                         }
+
                     }
                 }
                 
