@@ -105,17 +105,19 @@ public class Interactable : MonoBehaviour
                 
                 
             }
+
             
+
             // 2D array, i.e. array of references to arrays. needs these to be in scope but it sounds like they're global anyway
             //IAction[][] allActions = { inspectActions, messageActions, itemActions, activateActions };
 
             //foreach (IAction[] actionArray in allActions) {
             //    foreach (IAction action in actionArray) {
             //        action.Act();
-           //     }
-           // }
+            //     }
+            // }
 
-            
+
     }
     
     

@@ -142,6 +142,9 @@ public class PlayerScript : MonoBehaviour
                         //move player to the interactable *first.
                         MovePlayer(interactable.InteractPosition());
                         interactable.Interact(this); //can use "this" because we are sending this playerscript over.
+
+                        
+                        
                     }
                     else
                     {   //the hit point is sent over as targetPosition.
@@ -153,7 +156,7 @@ public class PlayerScript : MonoBehaviour
                 line.enabled = true;
                 line.SetPosition(0, transform.position);
                 line.SetPosition(1, hit.point);
-                Invoke("DeleteLine", 0.5f);
+                StartCoroutine(DeleteLine());
 
 
             }
@@ -190,10 +193,23 @@ public class PlayerScript : MonoBehaviour
         targetRot = Quaternion.LookRotation(targetDirection - transform.position);
     }
 
-    public void DeleteLine()
+    IEnumerator DeleteLine()
     {
+        yield return new WaitForSeconds(0.5f);
+        
         line.enabled = false;
         effect.Stop();
+        
+        while(!CheckIfArrived())
+        {
+            yield return null; //delays the coroutine while player hasn't arrived.
+        }
+        
+
+        
+        
+        Cursor.SetCursor(mouseOptions[3].cursor, hotSpot, cursorMode); //set cursor back to walk after interacting.
+        i = 3; //after interacting revert to normal mouse pointer integer.
     }
 
     [System.Serializable]
