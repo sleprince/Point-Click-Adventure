@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] Actions[] inspectActions;
     [SerializeField] Actions[] activateActions;
     [SerializeField] Actions[] itemActions;
+    
+    //Interactable.IAction [] inspectActions;
 
 
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
@@ -82,12 +84,7 @@ public class Interactable : MonoBehaviour
             //3 = Walk/Use
             
             //creates an array of arrays
-            Actions[][] allActions = new Actions[5][];
-
-            allActions[0] = inspectActions;
-            allActions[1] = messageActions;
-            allActions[2] = itemActions;
-            allActions[3] = activateActions;
+            Actions[][] allActions = { inspectActions, messageActions, itemActions, activateActions };
             
 
             for (int i = 0; i < allActions.Count(); i++) //so i = 0 to 3
@@ -109,7 +106,23 @@ public class Interactable : MonoBehaviour
                 
             }
             
+            // 2D array, i.e. array of references to arrays. needs these to be in scope but it sounds like they're global anyway
+            //IAction[][] allActions = { inspectActions, messageActions, itemActions, activateActions };
+
+            //foreach (IAction[] actionArray in allActions) {
+            //    foreach (IAction action in actionArray) {
+            //        action.Act();
+           //     }
+           // }
+
+            
     }
+    
+    
+    //public interface IAction
+   // void  Act();
+   // }
+
 
     /*
     [System.Serializable]
