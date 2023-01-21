@@ -15,20 +15,21 @@ public class Interactable : MonoBehaviour
     
     [SerializeField] MessageAction[] messageActions;
     [SerializeField] InspectAction[] inspectActions;
-    [SerializeField] ActivateActions[] activateActions;
-    [SerializeField] ItemActions[] itemActions;
+    [SerializeField] ActivateAction[] ActivateAction;
+    [SerializeField] ItemAction[] ItemAction;
 
 
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
 
-    [SerializeField] private PlayerScript _playerScript;
+    PlayerScript pScript;
 
     void Start()
     {
 
         agent = PlayerScript.FindObjectOfType<NavMeshAgent>();
+        pScript = PlayerScript.FindObjectOfType<PlayerScript>();
 
 
     }
@@ -65,56 +66,65 @@ public class Interactable : MonoBehaviour
         player.SetDirection(transform.position);
 
 
-        //string[] action = new string[4] {"InspectAction", "MessageAction", "ActivateActions", "ItemAction"};
+        //string[] action = new string[4] {"InspectAction", "MessageAction", "ActivateAction", "ItemAction"};
 
 
        // for (int i = 0; i < actions.Count(); i++)
         //{
             //actions[i].Act();
+            
+            //_playerScript.I values and what cursor type they mean
+            //0 = Look
+            //1 = Talk
+            //2 = Use/Give
+            //3 = Walk/pick up
 
             Actions[] inspect = actions.OfType<InspectAction>().ToArray();
             Actions[] message = actions.OfType<MessageAction>().ToArray();
+            Actions[] use = actions.OfType<ActivateAction>().ToArray();
+            Actions[] pickUp = actions.OfType<ItemAction>().ToArray();
+            
+            Actions[] animate = actions.OfType<AnimateAction>().ToArray();
+            
 
             //creates an array of arrays
-            Actions[][] allActions = new Actions[4][];
+            Actions[][] allActions = new Actions[5][];
 
             allActions[0] = inspect;
             allActions[1] = message;
+            allActions[2] = use;
+            allActions[3] = pickUp;
             
+            allActions[4] = animate;
 
-            if (_playerScript.I == 0)
+            for (int i = 0; i < allActions.Count(); i++)
             {
-                for (int j = 0; j < inspect.Count(); j++)
+                
+
+                if (pScript.I == i) // _playerScript.I is the int that determines which type of mouse cursor is used
                 {
-                    allActions[0][j].Act();
-                }
-            }
+                    for (int j = 0; j < allActions[i].Count(); j++)
+                    {
+                        if (allActions[i][j] != null) //if there are any of the type of actions
+                        {
+                            allActions[i][j].Act();
 
-            if (_playerScript.I == 1)
-            {
-                for (int k = 0; k < message.Count(); k++)
-                {
-                    allActions[1][k].Act();
+                            //animations if present, can trigger on any of the mouse cursors
+                            //allActions[4][j].Act();
+                        }
+                    }
                 }
-            }
-            
-            
-            
-            Dictionary<ArrayNames, Actions[]> actors = new Dictionary<ArrayNames, Actions[]>();  
-        
-            //loop through the dictionary and call the actions.Act for each array
-            foreach(KeyValuePair<ArrayNames, Actions[]> actor in actors){
-                //loop through the array
-                foreach(Actions act in actor.Value){
-                    //do something with the action
-                    act.Act();
-                }
-        
+                
+                
             }
             
+            //run remaining actions here if there are any. animate action can happen on any if it's there.
+            //for (int i = 0; i < allActions[4].Count(); i++)
+            //{
+           //     actions[i].Act();
+           // }
 
-
-
+            
 
             //}
 
@@ -125,17 +135,14 @@ public class Interactable : MonoBehaviour
             ItemAction
         }
     */
-        //0 = Look
-        //1 = Talk
-        //2 = Use
-        //3 = Walk/pick up
+
 
 
 
 
        
 
-        //string[] action = new string[4] {"inspectActions", "messageActions", "activateActions", "itemActions"};
+        //string[] action = new string[4] {"inspectActions", "messageActions", "ActivateAction", "ItemAction"};
         
         //string action1 = inspectActions[0].ToString();
         //action[0].Act();
@@ -189,8 +196,8 @@ public class Interactable : MonoBehaviour
     {
         [SerializeField] MessageAction[] messageActions;
         [SerializeField] InspectAction[] inspectActions;
-        [SerializeField] ActivateActions[] activateActions;
-        [SerializeField] ItemActions[] itemActions;
+        [SerializeField] ActivateAction[] ActivateAction;
+        [SerializeField] ItemAction[] ItemAction;
     }
     */
     

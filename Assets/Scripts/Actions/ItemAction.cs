@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemActions : Actions //used to give and receive items during runtime.
+public class ItemAction : Actions //used to give and receive items during runtime.
 {
     [SerializeField] ItemDatabase itemDatabase; //drag and drop item database object here in editor.
     [SerializeField] bool giveItem; //this will decide whether we are giving or receiving the item.

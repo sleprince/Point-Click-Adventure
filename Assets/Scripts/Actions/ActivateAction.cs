@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateActions : Actions
+public class ActivateAction : Actions
 
 {
     [SerializeField] List<CustomGameObject> customGameObjects = new List<CustomGameObject>();

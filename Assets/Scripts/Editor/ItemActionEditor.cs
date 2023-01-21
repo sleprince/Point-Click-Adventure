@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement; //for marking scene dirty.
 
-[CustomEditor(typeof(ItemActions))]
+[CustomEditor(typeof(ItemAction))]
 public class ItemActionEditor : Editor
 {
-    ItemActions source;
+    ItemAction source;
     SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, s_amount;
 
     private void OnEnable()
     {
-        source = (ItemActions)target;
+        source = (ItemAction)target;
         s_itemDatabase = serializedObject.FindProperty("itemDatabase");
         s_giveItem = serializedObject.FindProperty("giveItem");
         s_yesActions = serializedObject.FindProperty("yesActions");
@@ -37,7 +37,7 @@ public class ItemActionEditor : Editor
             DrawItemEntry(source.CurrentItem);
 
             EditorExtensions.DrawActionsArray(s_yesActions, "Yes Actions: "); //new version with static function from extensions, arguments
-            //are the serialized array of actions from ItemActions.cs,  and the label string for editorGUIlayour label field.
+            //are the serialized array of actions from ItemAction.cs,  and the label string for editorGUIlayour label field.
 
             //EditorGUILayout.PropertyField(s_yesActions, new GUIContent("Yes Actions: "), true); //this was just for testing out.
 
@@ -63,7 +63,7 @@ public class ItemActionEditor : Editor
     }
 
     void DrawItemEntry(Item item) //copied from inventory editor but delete button taken out.  //changed to Item instead of serialized
-                                  //property because we are getting the CurrentItem directly from ItemActions not ItemDatabase.
+                                  //property because we are getting the CurrentItem directly from ItemAction not ItemDatabase.
     {
 
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(ActivateActions))]
-public class ActivateActionsEditor : Editor
+[CustomEditor(typeof(ActivateAction))]
+public class ActivateActionEditor : Editor
 {
     SerializedProperty customGOList; //because it is a serialize field.
 
