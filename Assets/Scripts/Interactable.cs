@@ -9,14 +9,13 @@ using UnityEngine.AI;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] Actions[] actions;
+    //depricated
+    //[SerializeField] Actions[] actions;
 
-    //public List<ActionTypes> actionTypes = new List<ActionTypes>(4); 
-    
-    [SerializeField] MessageAction[] messageActions;
-    [SerializeField] InspectAction[] inspectActions;
-    [SerializeField] ActivateAction[] ActivateAction;
-    [SerializeField] ItemAction[] ItemAction;
+    [SerializeField] Actions[] messageActions;
+    [SerializeField] Actions[] inspectActions;
+    [SerializeField] Actions[] activateActions;
+    [SerializeField] Actions[] itemActions;
 
 
     [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
@@ -64,53 +63,45 @@ public class Interactable : MonoBehaviour
         player.Agent.destination = agent.destination + (new Vector3(0, 0, 0.2f));
 
         player.SetDirection(transform.position);
-
-
-        //string[] action = new string[4] {"InspectAction", "MessageAction", "ActivateAction", "ItemAction"};
-
-
-       // for (int i = 0; i < actions.Count(); i++)
-        //{
-            //actions[i].Act();
-            
-            //_playerScript.I values and what cursor type they mean
-            //0 = Look
-            //1 = Talk
-            //2 = Use/Give
-            //3 = Walk/pick up
-
+        
+            //depricated 
+            /*
             Actions[] inspect = actions.OfType<InspectAction>().ToArray();
             Actions[] message = actions.OfType<MessageAction>().ToArray();
             Actions[] use = actions.OfType<ActivateAction>().ToArray();
             Actions[] pickUp = actions.OfType<ItemAction>().ToArray();
             
             Actions[] animate = actions.OfType<AnimateAction>().ToArray();
+            */
             
-
+            
+            //_playerScript.I values and what cursor type they mean
+            //0 = Look
+            //1 = Talk
+            //2 = Pick Up/Give
+            //3 = Walk/Use
+            
             //creates an array of arrays
             Actions[][] allActions = new Actions[5][];
 
-            allActions[0] = inspect;
-            allActions[1] = message;
-            allActions[2] = use;
-            allActions[3] = pickUp;
+            allActions[0] = inspectActions;
+            allActions[1] = messageActions;
+            allActions[2] = itemActions;
+            allActions[3] = activateActions;
             
-            allActions[4] = animate;
 
-            for (int i = 0; i < allActions.Count(); i++)
+            for (int i = 0; i < allActions.Count(); i++) //so i = 0 to 3
             {
                 
 
-                if (pScript.I == i) // _playerScript.I is the int that determines which type of mouse cursor is used
+                if (pScript.I == i) // _playerScript.I is the int that determines which type of mouse cursor is being used
                 {
-                    for (int j = 0; j < allActions[i].Count(); j++)
+                    for (int j = 0; j < allActions[i].Count(); j++) //the count of actions for that category
                     {
                         if (allActions[i][j] != null) //if there are any of the type of actions
                         {
-                            allActions[i][j].Act();
+                            allActions[i][j].Act(); //do the actions
 
-                            //animations if present, can trigger on any of the mouse cursors
-                            //allActions[4][j].Act();
                         }
                     }
                 }
@@ -118,76 +109,6 @@ public class Interactable : MonoBehaviour
                 
             }
             
-            //run remaining actions here if there are any. animate action can happen on any if it's there.
-            //for (int i = 0; i < allActions[4].Count(); i++)
-            //{
-           //     actions[i].Act();
-           // }
-
-            
-
-            //}
-
-        /*public enum ArrayNames{
-            InspectAction,
-            MessageAction,
-            ActivateAction,
-            ItemAction
-        }
-    */
-
-
-
-
-
-       
-
-        //string[] action = new string[4] {"inspectActions", "messageActions", "ActivateAction", "ItemAction"};
-        
-        //string action1 = inspectActions[0].ToString();
-        //action[0].Act();
-        
-        //MethodInfo acts = inspectActions[0].GetType().GetMethod("Act");
-        
-        //acts.Invoke(inspectActions[0], null);
-        
-        
-        //$"{action[0]}"[0].
-        
-        /*
-        Debug.Log(action[0]);
-
-        for (int j = 0; j < action.Length; j++)
-        {
-
-            if (_playerScript.I == j)
-            {
-                for (int i = 0; i < $"{action[j]}".Length; i++)
-                {
-                    //$"{action[j]}"[i].Invoke("")
-                    //inspectActions[i].Act();
-
-                    MethodInfo acts = $"{action[j]}"[i].GetType().GetMethod("Act");
-
-                    acts.Invoke($"{action[j]}"[i], null);
-
-
-
-                }
-            }
-
-        }
-            */
-    
-        /*
-        if (_playerScript.I == 1)
-        {
-            for (int i = 0; i < messageActions.Length; i++)
-            {
-                messageActions[i].Act();
-            }
-        }
-        */
     }
 
     /*
@@ -200,15 +121,5 @@ public class Interactable : MonoBehaviour
         [SerializeField] ItemAction[] ItemAction;
     }
     */
-    
 
-
-        
-    //Samething but use a Dictionary instead of an array and enums instead of strings
-    public enum ArrayNames{
-        
-        message,
-        inspect
-    }
-    
 }//class end

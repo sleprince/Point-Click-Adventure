@@ -585,7 +585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 368890057}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188721971
 GameObject:
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 268476246}
   - component: {fileID: 268476245}
   m_Layer: 0
-  m_Name: NPCitem
+  m_Name: NPCgive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -856,7 +856,7 @@ Transform:
   m_Children:
   - {fileID: 188721972}
   m_Father: {fileID: 368890057}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &268476240
 MonoBehaviour:
@@ -870,14 +870,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 268476244}
+  actions: []
   messageActions: []
   inspectActions: []
   activateActions: []
-  itemActions: []
+  itemActions:
+  - {fileID: 268476244}
+  - {fileID: 268476246}
   distancePosition: 2
-  _playerScript: {fileID: 0}
 --- !u!136 &268476241
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1163,14 +1163,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2085307409}
   - {fileID: 1960099081}
   - {fileID: 1546186928}
+  - {fileID: 1732670328}
+  - {fileID: 2085307409}
+  - {fileID: 268476238}
   - {fileID: 1433786771}
   - {fileID: 1904253833}
-  - {fileID: 268476238}
   - {fileID: 146780621}
-  - {fileID: 1732670328}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7973,7 +7973,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 368890057}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1433786772
 BoxCollider:
@@ -8076,7 +8076,7 @@ Transform:
   m_Children:
   - {fileID: 279729586}
   m_Father: {fileID: 368890057}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1546186929
 BoxCollider:
@@ -8178,16 +8178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 1546186932}
-  - {fileID: 1546186934}
-  - {fileID: 1546186935}
+  actions: []
   messageActions: []
   inspectActions: []
   activateActions: []
-  itemActions: []
+  itemActions:
+  - {fileID: 1546186932}
+  - {fileID: 1546186934}
+  - {fileID: 1546186935}
   distancePosition: 1
-  _playerScript: {fileID: 0}
 --- !u!114 &1546186934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8883,7 +8882,7 @@ Transform:
   - {fileID: 42338180}
   - {fileID: 1237648232}
   m_Father: {fileID: 368890057}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -229.173, z: 0}
 --- !u!114 &1732670329
 MonoBehaviour:
@@ -8914,15 +8913,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 1732670329}
-  - {fileID: 556021592}
+  actions: []
   messageActions: []
   inspectActions: []
-  activateActions: []
+  activateActions:
+  - {fileID: 1732670329}
+  - {fileID: 556021592}
   itemActions: []
   distancePosition: 2
-  _playerScript: {fileID: 0}
 --- !u!136 &1732670331
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9179,7 +9177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 368890057}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1904253834
 BoxCollider:
@@ -9340,7 +9338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 368890057}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967128886
 GameObject:
@@ -9421,9 +9419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 2085307410}
-  - {fileID: 2085307413}
+  actions: []
   messageActions:
   - {fileID: 2085307410}
   inspectActions:
@@ -9431,7 +9427,6 @@ MonoBehaviour:
   activateActions: []
   itemActions: []
   distancePosition: 2
-  _playerScript: {fileID: 1694820012}
 --- !u!136 &2085307406
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9510,7 +9505,7 @@ Transform:
   m_Children:
   - {fileID: 52243357}
   m_Father: {fileID: 368890057}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2085307410
 MonoBehaviour:
