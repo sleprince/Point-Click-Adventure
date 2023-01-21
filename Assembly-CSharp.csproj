@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
      <Compile Include="Assets\Scripts\Actions\InspectAction.cs" />
      <Compile Include="Assets\Scripts\ScriptableObject\NullResponses.cs" />
+     <Compile Include="Assets\Scripts\ShuffleList.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\chain2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -100,6 +101,7 @@
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\banker_suit" />
      <Folder Include="Assets\simple modular human\prefabs\test terrain prefabs" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Assets\PointClick\Prefabs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\EverydayMotionPackFree\Motion" />
@@ -135,6 +137,7 @@
      <Folder Include="Assets\AddOns\Mg3D_Food" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes2" />
      <Folder Include="Assets\simple modular human\skybox" />
+     <Folder Include="Assets\Resources\ScriptableObjects" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\simple modular human\source_files" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

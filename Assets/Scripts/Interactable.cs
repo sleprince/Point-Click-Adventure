@@ -102,7 +102,8 @@ public class Interactable : MonoBehaviour
                     
                     if (allActions[i].Any() == false) //if there are no actions of that type.
                     {
-                        DialogueSystem.Instance.InspectMessage(nullresponses.Responses); //play a null response message.
+                        List<string> response = ShuffleList.ShuffleListItems(nullresponses.Responses);
+                        DialogueSystem.Instance.InspectMessage(response); //play a null response message.
                         //shuffle list before.
                     }
                     
