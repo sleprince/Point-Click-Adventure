@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -131,7 +132,7 @@ public class DialogueSystem : MonoBehaviour
                 if (msgId < currentMessages.Count)
                     messageText.text = currentMessages[msgId]; //message text updates to next message.
 
-                if (useDialogue && msgId == currentMessages.Count - 1)
+                if (useDialogue && msgId == currentMessages.Count - 1) //click to show the options.
                 { //when we get to our last message show the buttons.
                     yesButton.transform.parent.gameObject.SetActive(true); //using parent because then we can just 
                                                                            //hide entire dialogue panel when we setactive to false.
