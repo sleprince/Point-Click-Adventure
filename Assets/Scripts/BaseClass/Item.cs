@@ -10,16 +10,19 @@ public class Item
     [SerializeField] string itemDescription;
 
     [SerializeField] Sprite itemSprite;
+    [SerializeField] Texture2D itemCursor; //equivalent texture for cursor when using item.
     [SerializeField] bool allowMultiple;
     [SerializeField] int amount;
 
-    //constructor.
-    public Item(int itemId, string name, string desc, Sprite sprite, bool allowMultiple)
+    //constructor, like a function that has the same name as the class. When you initialise a new Item you can specify all
+    //these properties instead of all blank.
+    public Item(int itemId, string name, string desc, Sprite sprite, Texture2D cursor, bool allowMultiple)
     {
         this.itemId = itemId; //this. needed because it has the same name.
         itemName = name;
         itemDescription = desc;
         itemSprite = sprite;
+        itemCursor = cursor;
         this.allowMultiple = allowMultiple;
     }
 
@@ -28,6 +31,7 @@ public class Item
     public string ItemName { get { return itemName; } }
     public string ItemDesc { get { return itemDescription; } }
     public Sprite ItemSprite { get { return itemSprite; } }
+    public Texture2D ItemCursor { get { return itemCursor; } }
     public bool AllowMultiple { get { return allowMultiple; } }
     public int Amount { get { return amount; } }
 

@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
 
     public List<MouseOptions> mouseOptions = new List<MouseOptions>();
 
-    public int I { get { return i; } }
+    public int I { get { return i; } set { i = value; } }
     /*
     void OnMouseEnter()
     {

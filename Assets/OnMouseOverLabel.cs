@@ -7,10 +7,12 @@ public class OnMouseOverLabel : MonoBehaviour
 
     private GameObject _labelText;
     private bool _viewAll;
+    private new string name;
 
     void Start()
     {
-        _labelText = GameObject.Find("Button");
+        name = GetComponentInChildren<Canvas>().name;
+        _labelText = GameObject.Find(name);
         
         _labelText.SetActive(false);
     }

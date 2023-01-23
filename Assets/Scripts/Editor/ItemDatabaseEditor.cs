@@ -23,8 +23,8 @@ public class ItemDatabaseEditor : Editor
         //base.OnInspectorGUI();
         if (GUILayout.Button("Add Item")) //adds a button to add item, if clicked a new item is added with an ID number and all the empty fields.
         {
-            Item newItem = new Item(s_items.arraySize, "", "", null, false); //item id is arraysize because it will start at 0 and increase as items added.
-            source.AddItem(newItem);
+            Item newItem = new Item(s_items.arraySize, "", "", null, null, false); //item id is arraysize because it will start at 0 and increase as items added.
+            source.AddItem(newItem); //adds a blank item above, using contructor parameters.
         }
 
         for (int i = 0; i < s_items.arraySize; i++)
@@ -68,6 +68,12 @@ public class ItemDatabaseEditor : Editor
         item.FindPropertyRelative("itemSprite").objectReferenceValue = EditorGUILayout.ObjectField("Item Sprite: ",
             item.FindPropertyRelative("itemSprite").objectReferenceValue, typeof(Sprite), false); //to make the image appear in the inspector.
         //only allowed from asset folder.
+        
+        item.FindPropertyRelative("itemCursor").objectReferenceValue = EditorGUILayout.ObjectField("Item Cursor: ",
+            item.FindPropertyRelative("itemCursor").objectReferenceValue, typeof(Texture2D), false); //to make the image appear in the inspector.
+        //only allowed from asset folder.
+        
+        
         EditorGUILayout.PropertyField(item.FindPropertyRelative("allowMultiple"));
         GUILayout.EndHorizontal();
 

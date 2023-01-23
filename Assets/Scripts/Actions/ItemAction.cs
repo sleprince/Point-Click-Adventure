@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,12 @@ public class ItemAction : Actions //used to give and receive items during runtim
     [SerializeField] bool giveItem; //this will decide whether we are giving or receiving the item.
     [SerializeField] int amount;
     [SerializeField] Actions[] yesActions, noActions;
+    [SerializeField] string requiredItem;
+
+    private InventoryItemUI inventoryUI;
 
     public int itemId;
+    private bool rightItem;
 
     [SerializeField] Item currentItem; //this solves the null exception reference bug.
 
@@ -27,10 +32,27 @@ public class ItemAction : Actions //used to give and receive items during runtim
             currentItem = Extensions.CopyItem(item);
     }
 
+    public bool ItemMatch (string item)
+    {
+        bool val = false;
+        val = (requiredItem == item);
+        return val;
+    }
+
     public override void Act()
     {
-        //check if giveItem is true, then give the item
-        if (giveItem)
+         
+        
+        inventoryUI = FindObjectOfType<InventoryItemUI>();
+
+        Item currItem = InventoryItemUI.ChosenItem;
+        
+        if(giveItem && currItem != null)
+            rightItem = ItemMatch(currItem.ItemName);
+
+
+            //check if giveItem is true, then give the item
+        if (giveItem && rightItem) //only do this action if the currentItem is the requiredItem.
         {
             int itemOwned = DataManager.Instance.Inventory.CheckAmount(CurrentItem);
 

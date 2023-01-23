@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   inventory:
+  - itemId: 1
+    itemName: Chicken
+    itemDescription: Delicious chicken dinner.
+    itemSprite: {fileID: 21300000, guid: 43ad51e043491b94d8f6c62d55ac5ede, type: 3}
+    itemCursor: {fileID: 2800000, guid: 3312311ddc262db4a8c5f1b86f40b2ff, type: 3}
+    allowMultiple: 1
+    amount: 0
   - itemId: 2
     itemName: USB stick
     itemDescription: Contains newly supplied content for the dinosaur's unleashed
       exhibition which started 2 weeks ago.
     itemSprite: {fileID: 21300000, guid: ddf2e76e8a1f88f46ae1e42277850b48, type: 3}
+    itemCursor: {fileID: 2800000, guid: 7e0a757df49dc7b4d988cea08fa5910f, type: 3}
     allowMultiple: 0
     amount: 0
-  - itemId: 1
-    itemName: Chicken
-    itemDescription: Delicious chicken dinner.
-    itemSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    allowMultiple: 1
-    amount: 5

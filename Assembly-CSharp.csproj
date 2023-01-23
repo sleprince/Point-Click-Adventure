@@ -42,7 +42,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\simple modular human\scripts\Test_script.cs" />
-     <Compile Include="Assets\Scripts\CustomInspectorTut\SomeClass.cs" />
      <Compile Include="Assets\Scripts\BaseClass\Actions.cs" />
      <Compile Include="Assets\Scripts\BaseClass\Item.cs" />
      <Compile Include="Assets\simple modular human\scripts\clothing.cs" />
@@ -69,7 +68,6 @@
      <Folder Include="Assets\simple modular human\texture_materials\cloth\chain2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\simple modular human\readMe.txt" />
-     <Folder Include="Assets\Scripts\CustomInspectorTut" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\sample_scene" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\police_suit" />
@@ -130,6 +128,7 @@
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\prefabs" />
      <Folder Include="Assets\simple modular human\scene" />
      <Folder Include="Assets\Scripts\BaseClass" />
+     <Folder Include="Assets\Sprites\Cursors" />
      <Folder Include="Assets\TextureImportTools" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes3" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_a" />

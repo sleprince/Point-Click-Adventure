@@ -15,7 +15,7 @@ public static class Extensions //static as remains unchanged, functions used by 
 
     public static Item CopyItem(Item item) //for copying item from item database to inventory.
     {
-        Item newItem = new Item(item.ItemId, item.ItemName, item.ItemDesc, item.ItemSprite, item.AllowMultiple); //constuctor function is
+        Item newItem = new Item(item.ItemId, item.ItemName, item.ItemDesc, item.ItemSprite, item.ItemCursor, item.AllowMultiple); //constuctor function is
         //in Item.cs
         //can only get and not modify any of these item properties which should stop other scripts changing/interfering with the values.
 
