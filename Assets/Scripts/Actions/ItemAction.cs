@@ -11,6 +11,8 @@ public class ItemAction : Actions //used to give and receive items during runtim
     [SerializeField] Actions[] yesActions, noActions;
     [SerializeField] string requiredItem;
 
+    private PlayerScript _pScript;
+
     private InventoryItemUI inventoryUI;
 
     public int itemId;
@@ -102,6 +104,11 @@ public class ItemAction : Actions //used to give and receive items during runtim
                 }
             }
         }
+
+
+        //_pScript = FindObjectOfType<PlayerScript>();
+
+
     }
 
 }//class end.

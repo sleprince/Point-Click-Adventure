@@ -120,9 +120,11 @@ public class Interactable : MonoBehaviour
                 }
                 
                 
+                
             }
 
             
+            pScript.I = 3;
 
             // 2D array, i.e. array of references to arrays. needs these to be in scope but it sounds like they're global anyway
             //IAction[][] allActions = { inspectActions, messageActions, itemActions, activateActions };
