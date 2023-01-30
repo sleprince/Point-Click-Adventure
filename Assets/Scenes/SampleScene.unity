@@ -998,7 +998,6 @@ MonoBehaviour:
   itemActions:
   - {fileID: 268476244}
   - {fileID: 268476246}
-  distancePosition: 2
 --- !u!136 &268476241
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1744,7 +1743,6 @@ MonoBehaviour:
   activateActions: []
   itemActions:
   - {fileID: 509379703}
-  distancePosition: 1
 --- !u!65 &509379705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9162,7 +9160,6 @@ MonoBehaviour:
   - {fileID: 1546186932}
   - {fileID: 1546186934}
   - {fileID: 1546186935}
-  distancePosition: 1
 --- !u!114 &1546186934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9726,7 +9723,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 960
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -10032,7 +10029,6 @@ MonoBehaviour:
   - {fileID: 1732670329}
   - {fileID: 556021592}
   itemActions: []
-  distancePosition: 2
 --- !u!136 &1732670331
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10385,7 +10381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904253832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.92, y: -0.43, z: -9.78}
+  m_LocalPosition: {x: -12.57, y: -0.43, z: -9.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10639,7 +10635,6 @@ MonoBehaviour:
   - {fileID: 2085307413}
   activateActions: []
   itemActions: []
-  distancePosition: 2
 --- !u!136 &2085307406
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10735,7 +10730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message:
   - Hey, how's it going?
-  - 'Amanda: Terribly, I wasn''t even supposed to be here today!'
+  - 'Amanda: Hey. How can I help?'
   enableDialogue: 1
   yesText: What's the latest report on broken tech stuff for today?
   noText: Why is that piece of paper stuck on the screen?

@@ -11,7 +11,7 @@ public class DialogueSystem : MonoBehaviour
                                                                 //from this script in another script.
 
     [SerializeField] TMPro.TextMeshProUGUI messageText, yesText, noText; //note what's needed to get TMP text working for future reference.
-    [SerializeField] GameObject panel; //the dialogue panel we made earlier.
+    public GameObject panel; //the dialogue panel we made earlier.
     [SerializeField] Button yesButton, noButton; //basic options for player. Right and wrong
     //answers, going to pass these to ShowMessage in MessageAction.
 

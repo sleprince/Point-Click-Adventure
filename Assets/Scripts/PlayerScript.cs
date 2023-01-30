@@ -72,6 +72,8 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1)) //right mouse button to cycle between different cursors for different action types.
         {
+            agent.speed = 3.5f;
+            
             i++;
             if (i == 4)
                 i = 0;
@@ -86,17 +88,35 @@ public class PlayerScript : MonoBehaviour
         {
             OnClick();
         }
+        
+        if (turning && DialogueSystem.Instance.conversing)
+        {
+            StartCoroutine(StopTurning());
+        }
 
         if (turning && transform.rotation != targetRot) //if turning and not rotated towards the target.
         {
             //transform towards the target.
             //15f x time is so that the rotation is smooth all different spec PCs with different framerates.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 15f * Time.deltaTime);
+            //targetRot.x -= 10f;
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 15f * Time.deltaTime);
+            //agent.speed = 0;
+            
+           // if (DialogueSystem.Instance.panel.activeSelf)
+           // {
+            //    transform.rotation = transform.rotation;
+
+           // }
+            
         }
+        
+        if (!agent.isStopped && DialogueSystem.Instance.conversing)
+            agent.isStopped = true;
         
         //playerAnim
         playerAnim.UpdateAnimation(agent.velocity.sqrMagnitude); //to get float of movement speed from agent, don't need
         //magnitude normal version as sqr is near enough.
+        
     }
 
     void OnClick()
@@ -180,6 +200,8 @@ public class PlayerScript : MonoBehaviour
     void MovePlayer(Vector3 targetPosition)
     {
         turning = false;
+        
+        agent.isStopped = false;
 
         agent.SetDestination(targetPosition);
 
@@ -190,9 +212,18 @@ public class PlayerScript : MonoBehaviour
     public void SetDirection(Vector3 targetDirection)
     {
         turning = true;
-        targetRot = Quaternion.LookRotation(targetDirection - transform.position);
+        Vector3 vectorDirection = targetDirection - transform.position;
+        vectorDirection.y = 0f;
+        targetRot = Quaternion.LookRotation(vectorDirection);
     }
 
+    IEnumerator StopTurning()
+    {
+        yield return new WaitForSeconds(1f);
+        turning = false;
+    }
+    
+    
     IEnumerator DeleteLine()
     {
         yield return new WaitForSeconds(0.5f);

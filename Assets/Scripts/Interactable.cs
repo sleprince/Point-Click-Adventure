@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
     //Interactable.IAction [] inspectActions;
 
 
-    [SerializeField] float distancePosition = 1f; //how far away from interactable player stops.
+    private float distancePosition = 3f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
 
@@ -63,14 +63,18 @@ public class Interactable : MonoBehaviour
             yield return null; //delays the coroutine while they haven't arrived.
         }
 
+        //yield return new WaitForSeconds(1f);
         //it will only run the code below when the player arrives.
         Debug.Log("Player arrived");
+        
+        //yield return new WaitForSeconds(2f);
 
         //move player back here
-
         player.Agent.destination = agent.destination + (new Vector3(0, 0, 0.2f));
 
         player.SetDirection(transform.position);
+
+        
         
             //depricated 
             /*
