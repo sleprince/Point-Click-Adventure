@@ -101,6 +101,7 @@
      <Folder Include="Assets\simple modular human\prefabs\test terrain prefabs" />
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\PointClick\Prefabs" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <Folder Include="Assets\EverydayMotionPackFree\Motion" />
      <Folder Include="Assets\Scripts\Actions" />
@@ -120,25 +121,34 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_b" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\mechanic" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\MainLvl" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Scripts\InventoryUI" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Crawl" />
      <Folder Include="Assets\simple modular human\scripts" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\glasses1" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\jacket" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\prefabs" />
      <Folder Include="Assets\simple modular human\scene" />
      <Folder Include="Assets\Scripts\BaseClass" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Dungeon" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Walls" />
      <Folder Include="Assets\Sprites\Cursors" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Floors" />
      <Folder Include="Assets\TextureImportTools" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes3" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_a" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_c" />
      <Folder Include="Assets\AddOns\Mg3D_Food" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes2" />
+     <None Include="Assets\Prefabs\ModularLevel\Level\BaseObjects\_ReadMe_BaseObjects.txt" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Signs" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Rooms" />
      <Folder Include="Assets\simple modular human\skybox" />
      <Folder Include="Assets\Resources\ScriptableObjects" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\simple modular human\source_files" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\MainLvl\Section3" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\animation" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -146,6 +156,7 @@
      <Folder Include="Assets\simple modular human\texture_materials\cloth\trousers" />
      <Folder Include="Assets\simple modular human\texture_materials\hair" />
      <Folder Include="Assets\simple modular human" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\BaseObjects" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\t_shirt" />
      <Folder Include="Assets\Scripts\ScriptableObject" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
@@ -153,6 +164,7 @@
      <Folder Include="Assets\EverydayMotionPackFree\Model\Chatacter\Materials" />
      <Folder Include="Assets\Scripts\Data" />
      <Folder Include="Assets\Scenes\SampleScene" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Stairwell" />
      <Folder Include="Assets\AddOns\Mg3D_Hats" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <Folder Include="Assets\Scripts" />
@@ -177,6 +189,7 @@
      <Folder Include="Assets\EverydayMotionPackFree\Motion\03_Emotion" />
      <Folder Include="Assets\PointClick\Models" />
      <Folder Include="Assets\EverydayMotionPackFree\Model\Materials" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\MainLvl\Section1" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\nurse_suit" />
      <Folder Include="Assets\EverydayMotionPackFree\Model" />
      <Folder Include="Assets\AddOns" />
@@ -186,6 +199,7 @@
      <Folder Include="Assets\Animators" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Pixel Cursors\Cursors" />
+     <Folder Include="Assets\Prefabs\ModularLevel" />
      <Folder Include="Assets\Scripts\Extensions" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\farmer_suit" />
      <Folder Include="Assets\Prefabs\InventoryUI" />
@@ -193,6 +207,7 @@
      <None Include="Assets\AddOns\Mg3D_Hats\Hats_ReadMe.txt" />
      <Folder Include="Assets\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Catwalk" />
      <Folder Include="Assets\simple modular human\scene\Nav_mesh" />
      <Folder Include="Assets\ToonyTinyPeople\TT_demo\animation\zombie" />
      <Folder Include="Assets\PointClick" />
@@ -201,9 +216,12 @@
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\fireman_suit" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\tanktop" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\MainLvl\Section2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\cap" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Ramps" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits" />
+     <Folder Include="Assets\Prefabs\ModularLevel\Level\Steps" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\robber_suit" />
@@ -912,6 +930,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\da_pr\Documents\GitHub\Point-Click-Adventure\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>C:\Users\da_pr\Documents\GitHub\Point-Click-Adventure\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>C:\Users\da_pr\Documents\GitHub\Point-Click-Adventure\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
