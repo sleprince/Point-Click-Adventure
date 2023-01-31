@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
+    [SerializeField] private GameObject InventoryUI;
+
     public NavMeshAgent Agent { get { return agent; } } //public getter.
     
     public Texture2D cursorTexture; //these 3 parameters are for custom mouse cursor for look, pick up etc.
@@ -83,7 +85,7 @@ public class PlayerScript : MonoBehaviour
         }
         
         
-        if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing) //if left mouse button clicked.
+        if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing && !InventoryUI.activeSelf) //if left mouse button clicked.
             //0 is left, 1 is right, 2 is middle.
         {
             OnClick();
@@ -143,14 +145,16 @@ public class PlayerScript : MonoBehaviour
         {
 
             effect.transform.position = hit.point; //move particle effect to ray hit point and play.
-            effect.Play();
+            
+            if(hit.collider.gameObject.layer != 2) //if the layer is not ignore raycast layer
+                
 
 
             //if raycast hits something move player.
-            if (hit.collider != null)
+            if (hit.collider != null && (hit.collider.gameObject.layer != 2 && hit.collider.gameObject.layer != 5 ) && !InventoryUI.activeSelf) //if what it hit is not null, and not on the ignore raycast layer
             {
 
-
+                effect.Play();
 
                 //temporary variable interactive is the Interactable class script that is attached to the the 
                 //object the raycast is hitting.
@@ -173,7 +177,7 @@ public class PlayerScript : MonoBehaviour
 
                     }
 
-                line.enabled = true;
+                //line.enabled = true; was for debugging purposes
                 line.SetPosition(0, transform.position);
                 line.SetPosition(1, hit.point);
                 StartCoroutine(DeleteLine());
