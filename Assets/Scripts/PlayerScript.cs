@@ -83,6 +83,14 @@ public class PlayerScript : MonoBehaviour
             
 
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+            if(!InventoryUI.activeSelf)
+                InventoryUI.SetActive(true);
+            else
+            {
+                InventoryUI.SetActive(false);
+            }
         
         
         if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing && !InventoryUI.activeSelf) //if left mouse button clicked.
