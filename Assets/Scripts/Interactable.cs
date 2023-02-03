@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
     //Interactable.IAction [] inspectActions;
 
 
-    private float distancePosition = 3f; //how far away from interactable player stops.
+    private float distancePosition = 1f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
 

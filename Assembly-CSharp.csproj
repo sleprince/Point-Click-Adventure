@@ -98,6 +98,7 @@
      <Folder Include="Assets\simple modular human\source_files\test_terrain_source_files" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\shoes1" />
      <Folder Include="Assets\simple modular human\texture_materials\cloth\complet_suits\worker" />
+     <Folder Include="Assets\Tree_Textures" />
      <Folder Include="Assets\PointClick\Materials" />
      <Folder Include="Assets\simple modular human\texture_materials\hair\hair_d" />
      <Folder Include="Assets\ModAssets" />
