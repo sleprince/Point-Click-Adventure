@@ -8,6 +8,8 @@ public class InventorySystemUI : MonoBehaviour
     [SerializeField] private Transform itemsParents; //for the item layout.
     [SerializeField] private InventoryItemUI itemUIprefabs; //prefab of 1 button with 1 item in the grid on the inventory UI panel. Child of item layout.
     [SerializeField] private Inventory playerInventory;
+    
+    public GameObject descriptionPanel;
 
     private List<InventoryItemUI> itemUICollection = new List<InventoryItemUI>(); //all itemUI objects that we instantiate
                                                                                   //at runtime will be stored in this list.
