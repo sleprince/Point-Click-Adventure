@@ -74,18 +74,16 @@ public class InventoryItemUI : MonoBehaviour
        
     }
 
-    void Update(Item item)
+    void Update()
     {
-        if (Input.GetMouseButtonDown(2))
-        {
-            invSystemUI.descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = item.ItemDesc;
-            invSystemUI.descriptionPanel.SetActive(true);
-        }
-         else if (Input.GetMouseButtonUp(2))
-            invSystemUI.descriptionPanel.SetActive(false);
+
+        //DescriptionShow();
+
+
         
 
     }
+
 
     private void OnMouseOver(Item item)
     {
@@ -97,4 +95,5 @@ public class InventoryItemUI : MonoBehaviour
     {
         invSystemUI.descriptionPanel.SetActive(false);
     }
+
 }//class end
