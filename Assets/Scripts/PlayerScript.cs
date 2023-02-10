@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 
     public List<MouseOptions> mouseOptions = new List<MouseOptions>();
 
-    public int I { get { return i; } set { i = value; } }
+    public int I { get { return i; } set { i = value; } } //editable value, public getter.
     /*
     void OnMouseEnter()
     {
@@ -89,6 +89,7 @@ public class PlayerScript : MonoBehaviour
                 InventoryUI.SetActive(true);
             else
             {
+                InventoryUI.transform.Find("DescriptionPanel").gameObject.SetActive(false);
                 InventoryUI.SetActive(false);
             }
         
