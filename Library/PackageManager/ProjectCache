@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638107930316833589
-    m_Hash: 1437506298
+      ticks: 638116629592049411
+    m_Hash: 2423515720
   m_LockFileStatus:
     m_FilePath: C:/Users/da_pr/Documents/GitHub/Point-Click-Adventure/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638107930316953596
-    m_Hash: 3459544118
+      ticks: 638116629592049411
+    m_Hash: 3979448009
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

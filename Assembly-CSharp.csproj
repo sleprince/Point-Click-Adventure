@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Actions\ItemAction.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Extensions\Extensions.cs" />
+    <Compile Include="Assets\ToonBot\ToonBot(Free) Assets\Controller\RobotTestScriptFree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
