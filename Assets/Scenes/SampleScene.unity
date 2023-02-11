@@ -22180,7 +22180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.13515319, y: -0.27133575, z: 0.03851419, w: 0.9521698}
-  m_LocalPosition: {x: 0.36, y: -0.71900004, z: -4.81}
+  m_LocalPosition: {x: 0.36, y: -0.60400003, z: -4.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22419,7 +22419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982341581}
   m_LocalRotation: {x: 0.13515319, y: -0.27133575, z: 0.03851419, w: 0.9521698}
-  m_LocalPosition: {x: 0.36, y: -0.71900004, z: -4.81}
+  m_LocalPosition: {x: 0.36, y: -0.60400003, z: -4.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25930,7 +25930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7447163605590411544, guid: 907fd825e3988774caab4234b943bf44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.015
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 7447163605590411544, guid: 907fd825e3988774caab4234b943bf44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48772,8 +48772,8 @@ MonoBehaviour:
     itemId: 0
     itemName: Key
     itemDescription: An unlabelled key for an unknown door.
-    itemSprite: {fileID: 21300000, guid: 309b1d5a294fd6c43ae9cf77656c1852, type: 3}
-    itemCursor: {fileID: 2800000, guid: 3e59666f7c08bf349bb2ee8341c43c8d, type: 3}
+    itemSprite: {fileID: 21300000, guid: 70744b7263cc4b54a984222212dd9308, type: 3}
+    itemCursor: {fileID: 2800000, guid: 4a7981dfbd6af96478030e1c19a89c34, type: 3}
     allowMultiple: 0
     amount: 0
 --- !u!114 &1546186933
