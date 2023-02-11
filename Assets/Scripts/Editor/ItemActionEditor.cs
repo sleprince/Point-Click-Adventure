@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement; //for marking scene dirty.
 public class ItemActionEditor : Editor
 {
     ItemAction source;
-    SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, s_amount;
+    SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, s_amount, r_item;
 
     private void OnEnable()
     {
@@ -18,6 +18,8 @@ public class ItemActionEditor : Editor
         s_yesActions = serializedObject.FindProperty("yesActions");
         s_noActions = serializedObject.FindProperty("noActions");
         s_amount = serializedObject.FindProperty("amount");
+        r_item = serializedObject.FindProperty("requiredItem");
+
     }
 
     public override void OnInspectorGUI()
@@ -33,6 +35,8 @@ public class ItemActionEditor : Editor
 
             EditorGUILayout.PropertyField(s_giveItem, new GUIContent("Give Item: "));
 
+            EditorGUILayout.PropertyField(r_item, new GUIContent("Required Item: ")); //adding this in so you can specify item needed to use on this interactable.
+
             //draw the item entry
             DrawItemEntry(source.CurrentItem);
 
@@ -44,6 +48,8 @@ public class ItemActionEditor : Editor
             EditorExtensions.DrawActionsArray(s_noActions, "No Actions: ");
 
             //EditorGUILayout.PropertyField(s_noActions, new GUIContent("No Actions: "), true);
+
+            
         }
 
         if (GUI.changed)
@@ -83,8 +89,9 @@ public class ItemActionEditor : Editor
 
         GUILayout.BeginHorizontal();
 
-        var spriteViewer = AssetPreview.GetAssetPreview(item.ItemSprite);
-        GUILayout.Label(spriteViewer);
+        // var spriteViewer = AssetPreview.GetAssetPreview(item.ItemSprite);
+        // GUILayout.Label(spriteViewer);
+
 
         if (item.AllowMultiple)
             EditorGUILayout.PropertyField(s_amount);

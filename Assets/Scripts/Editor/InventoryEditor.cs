@@ -72,9 +72,9 @@ public class InventoryEditor : Editor
 
         GUILayout.BeginHorizontal();
 
-        var spriteViewer = AssetPreview.GetAssetPreview(item.FindPropertyRelative("itemSprite").objectReferenceValue); //texture containing
+       //var spriteViewer = AssetPreview.GetAssetPreview(item.FindPropertyRelative("itemSprite").objectReferenceValue); //texture containing
         //the sprite preview.
-        GUILayout.Label(spriteViewer); //label can render text or a texture.
+       // GUILayout.Label(spriteViewer); //label can render text or a texture. taken out because too big.
 
         if (item.FindPropertyRelative("allowMultiple").boolValue)
             EditorGUILayout.PropertyField(item.FindPropertyRelative("amount"));
