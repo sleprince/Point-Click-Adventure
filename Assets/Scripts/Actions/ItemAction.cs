@@ -90,14 +90,14 @@ public class ItemAction : Actions //used to give and receive items during runtim
                 DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, amount);
                 Extensions.RunActions(yesActions);
             }
-            else if (!CurrentItem.AllowMultiple)
+            else if (!CurrentItem.AllowMultiple) 
             {
                 if (DataManager.Instance.Inventory.CheckAmount(CurrentItem) == 1)
                 {
                     //already have
                     Extensions.RunActions(noActions);
                 }
-                else
+                else if (!giveItem) //had to add second part otherwise it gives the item when you're trying to use an item
                 {
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, 1);
                     Extensions.RunActions(yesActions);
