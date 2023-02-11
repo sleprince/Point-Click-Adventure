@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3924052525768734644}
-  descriptionPanel: {fileID: 0}
+  invSystemUI: {fileID: 0}
 --- !u!61 &3335660241614013767
 BoxCollider2D:
   m_ObjectHideFlags: 0

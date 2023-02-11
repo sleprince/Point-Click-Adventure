@@ -17,7 +17,7 @@ public class InventoryItemUI : MonoBehaviour
     [SerializeField] private Image itemImage; //the image that will be attached to the button
     PlayerScript _pScript;
 
-    private InventorySystemUI invSystemUI;
+    InventorySystemUI invSystemUI;
 
     
     private TMPro.TextMeshProUGUI descriptionText;
@@ -27,8 +27,9 @@ public class InventoryItemUI : MonoBehaviour
     public void Init(Item item, InventorySystemUI invSystem)
     {
         _pScript = FindObjectOfType<PlayerScript>();
-        invSystemUI = FindObjectOfType<InventorySystemUI>();
-        
+        invSystemUI = invSystem;
+
+
         thisItem = item;
         this.invSystem = invSystem; //have to use this. because the internal variable has the same name
 
@@ -52,12 +53,12 @@ public class InventoryItemUI : MonoBehaviour
 
     void OnClick(Button btn, Item itm)
     {
-        invSystemUI.descriptionPanel.SetActive(false);
+        invSystemUI.transform.Find("DescriptionPanel").gameObject.SetActive(false);
         
         if (_pScript.I == 0)
         {
-            invSystemUI.descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = itm.ItemDesc;
-            invSystemUI.descriptionPanel.SetActive(true);
+            invSystemUI.transform.Find("DescriptionPanel").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = itm.ItemDesc;
+            invSystemUI.transform.Find("DescriptionPanel").gameObject.SetActive(true);
             
         }
         else
