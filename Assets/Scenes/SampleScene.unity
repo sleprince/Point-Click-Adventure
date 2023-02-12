@@ -55161,14 +55161,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758435863}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.49308512, y: -0.50682056, z: -0.49308512, w: 0.50682056}
   m_LocalPosition: {x: -19.09, y: 0.11, z: -12.67}
-  m_LocalScale: {x: 0.11449234, y: 0.11449234, z: 0.11449234}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1762586505
 Mesh:
   m_ObjectHideFlags: 0
@@ -93746,6 +93746,7 @@ GameObject:
   - component: {fileID: 5564759282199369076}
   - component: {fileID: 5564759282208834747}
   - component: {fileID: 5564759282208834749}
+  - component: {fileID: 5564759282208834759}
   - component: {fileID: 5564759282208834753}
   - component: {fileID: 5564759282208834752}
   - component: {fileID: 5564759282208834751}
@@ -93847,7 +93848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageActions: []
+  messageActions:
+  - {fileID: 5564759282208834759}
   inspectActions: []
   activateActions: []
   itemActions:
@@ -93906,10 +93908,11 @@ MonoBehaviour:
   - You covered the robot's head and navigation camera with the tea towel.
   - You covered the robot's head and navigation camera with the tea towel.
   enableDialogue: 1
-  yesText: Make robot fall down the staris again.
+  yesText: Make robot fall down the stairs again.
   noText: Had enough.
   yesActions:
   - {fileID: 5564759282208834757}
+  - {fileID: 5564759282208834752}
   noActions:
   - {fileID: 5564759282208834758}
 --- !u!114 &5564759282208834753
@@ -94000,11 +94003,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customGameObjects:
-  - gO: {fileID: 0}
+  - gO: {fileID: 1904253832}
     activeStatus: 0
   reset: 1
   spawnPos: {fileID: 1758435864}
-  toReset: {fileID: 5564759282208834742}
+  toReset: {fileID: 5564759282208834644}
 --- !u!114 &5564759282208834758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94019,6 +94022,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchCam: {fileID: 431749001}
   exiting: 1
+--- !u!114 &5564759282208834759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564759282208834742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d913db54afa07354bb211a1c123ccdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: []
+  enableDialogue: 1
+  yesText: 
+  noText: 
+  yesActions: []
+  noActions: []
+  itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
+  requiredItem: Towel
+  currentItem:
+    itemId: 0
+    itemName: 
+    itemDescription: 
+    itemSprite: {fileID: 0}
+    itemCursor: {fileID: 0}
+    amount: 0
 --- !u!1 &5595337316686806163
 GameObject:
   m_ObjectHideFlags: 0
