@@ -12,7 +12,7 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] TMPro.TextMeshProUGUI messageText, yesText, noText; //note what's needed to get TMP text working for future reference.
     public GameObject panel; //the dialogue panel we made earlier.
-    [SerializeField] Button yesButton, noButton; //basic options for player. Right and wrong
+    [SerializeField] Button yesButton, noButton; //basic options for player. Right and no
     //answers, going to pass these to ShowMessage in MessageAction.
 
     private List<string> currentMessages = new List<string>();
@@ -28,12 +28,12 @@ public class DialogueSystem : MonoBehaviour
     private void Awake()
     {
         Instance = this; //for the public staticness of the script.
-        
+
 
     }
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         panel.SetActive(false); //so that dialogue panel is not visible to begin with.
 
@@ -42,8 +42,8 @@ public class DialogueSystem : MonoBehaviour
 
     }
 
-    public void ShowMessages(List<string> messages, bool dialogue, List<Actions> correctActions = null, List<Actions> wrongActions = null, string yes = "Yes", string no = "No")
-    // = null is so that when there are no yes,Wrong Actions in the dialog we don't have to send anything over.
+    public void ShowMessages(List<string> messages, bool dialogue, List<Actions> yesActions = null, List<Actions> noActions = null, string yes = "Yes", string no = "No")
+    // = null is so that when there are no yes,no actions in the dialog we don't have to send anything over.
     {
 
 
@@ -67,8 +67,8 @@ public class DialogueSystem : MonoBehaviour
             {
                 panel.SetActive(false);
 
-                if (correctActions != null)
-                    AssignActionstoButtons(correctActions);
+                if (yesActions != null)
+                    AssignActionstoButtons(yesActions);
             });
 
             noText.text = no;
@@ -78,8 +78,8 @@ public class DialogueSystem : MonoBehaviour
                 panel.SetActive(false);
 
 
-                if (wrongActions != null)
-                    AssignActionstoButtons(wrongActions);
+                if (noActions != null)
+                    AssignActionstoButtons(noActions);
             });
         }
 
@@ -90,7 +90,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void InspectMessage(List<string> messages)
     {
-        
+
         msgId = 0;
 
 
@@ -115,7 +115,7 @@ public class DialogueSystem : MonoBehaviour
     {
         messageText.text = currentMessages[msgId]; //changing the TMP text to be the current message.
 
-        if (msgId == currentMessages.Count -1) //if it was the last message last time, reset message ID and don't do anything else.
+        if (msgId == currentMessages.Count - 1) //if it was the last message last time, reset message ID and don't do anything else.
         {
             msgId = 0;
             //yield return null;
@@ -127,7 +127,7 @@ public class DialogueSystem : MonoBehaviour
             {
 
 
-                    msgId++;
+                msgId++;
 
                 if (msgId < currentMessages.Count)
                     messageText.text = currentMessages[msgId]; //message text updates to next message.
@@ -136,14 +136,14 @@ public class DialogueSystem : MonoBehaviour
                 { //when we get to our last message show the buttons.
                     yesButton.transform.parent.gameObject.SetActive(true); //using parent because then we can just 
                                                                            //hide entire dialogue panel when we setactive to false.
-                    //msgId = 0;
+                                                                           //msgId = 0;
                 }
 
                 //if (!useDialogue && msgId == currentMessages.Count - 1 || useDialogue && msgId == currentMessages.Count - 1)
-                        //move player back to solve bug.
+                //move player back to solve bug.
 
 
-                
+
 
             }
 

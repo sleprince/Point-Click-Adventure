@@ -7,7 +7,7 @@ public class ItemAction : Actions //used to use and pick up items during runtime
 {
     [SerializeField] ItemDatabase itemDatabase; //drag and drop item database object here in editor.
     [SerializeField] bool useItem; //this will decide whether we are using or picking up the item.
-    [SerializeField] Actions[] correctActions, wrongActions;
+    [SerializeField] Actions[] yesActions, noActions;
     [SerializeField] string requiredItem;
 
     private PlayerScript _pScript;
@@ -61,8 +61,8 @@ public class ItemAction : Actions //used to use and pick up items during runtime
             if (itemOwned == 1)
             {
 
-                    //pass the item, invoke correctActions
-                    Extensions.RunActions(correctActions);
+                    //pass the item, invoke yesActions
+                    Extensions.RunActions(yesActions);
 
                     //run the actions first, then remove the item from inventory
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, -1, true);
@@ -73,12 +73,12 @@ public class ItemAction : Actions //used to use and pick up items during runtime
         else
         {
 
-                    Extensions.RunActions(wrongActions);
+                    Extensions.RunActions(noActions);
                 
                 if (!useItem) //had to add second part otherwise it uses the item when you're trying to pick up an item
                 {
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, 1);
-                    Extensions.RunActions(correctActions);
+                    Extensions.RunActions(yesActions);
                 }
             
         }

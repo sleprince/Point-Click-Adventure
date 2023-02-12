@@ -3011,7 +3011,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &38550115
 Mesh:
@@ -4860,7 +4860,7 @@ Transform:
   - {fileID: 1021631806}
   - {fileID: 3504017}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107041328
 GameObject:
@@ -8578,8 +8578,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 0
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
   requiredItem: 
   itemId: 1
   currentItem:
@@ -8606,8 +8606,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &268476246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8625,8 +8625,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!1 &279729585
 GameObject:
   m_ObjectHideFlags: 0
@@ -9235,6 +9235,9 @@ MonoBehaviour:
   customGameObjects:
   - gO: {fileID: 302438060}
     activeStatus: 0
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &305208255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9252,8 +9255,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &305208257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9351,8 +9354,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 0
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
   requiredItem: 
   itemId: 2
   currentItem:
@@ -10562,7 +10565,7 @@ Transform:
   - {fileID: 146780621}
   - {fileID: 1701069887}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &377675659
 Mesh:
@@ -14152,7 +14155,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554828204
 GameObject:
@@ -17413,7 +17416,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &656548409
 MonoBehaviour:
@@ -17429,8 +17432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 0
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
   requiredItem: 
   itemId: 1
   currentItem:
@@ -17483,7 +17486,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &672561262
 Mesh:
@@ -18054,7 +18057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!43 &707753819
 Mesh:
@@ -25584,7 +25587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1057647287
 Mesh:
@@ -37044,7 +37047,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!144 &1208733080
 CharacterJoint:
@@ -44862,7 +44865,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1471939067
 MonoBehaviour:
@@ -47471,8 +47474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 0
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
   requiredItem: 
   itemId: 0
   currentItem:
@@ -47519,8 +47522,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &1546186935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47536,6 +47539,9 @@ MonoBehaviour:
   customGameObjects:
   - gO: {fileID: 1546186927}
     activeStatus: 0
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &1546186936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49728,7 +49734,7 @@ RectTransform:
   - {fileID: 1967128887}
   - {fileID: 1022472001}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -50822,7 +50828,7 @@ Transform:
   - {fileID: 140715109}
   - {fileID: 2050254012}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1694820011
 NavMeshAgent:
@@ -53559,8 +53565,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &1701069889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53588,6 +53594,9 @@ MonoBehaviour:
   customGameObjects:
   - gO: {fileID: 1701069886}
     activeStatus: 0
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &1701069891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53605,8 +53614,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &1701069892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53621,11 +53630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 1
-  correctActions:
-  - {fileID: 1701069890}
-  - {fileID: 1701069891}
-  wrongActions:
-  - {fileID: 1701069888}
+  yesActions: []
+  noActions: []
   requiredItem: Key
   itemId: 0
   currentItem:
@@ -54272,6 +54278,9 @@ MonoBehaviour:
     activeStatus: 0
   - gO: {fileID: 146780617}
     activeStatus: 1
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &1732670330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55129,6 +55138,37 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1758435863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1758435864}
+  m_Layer: 0
+  m_Name: RobotSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1758435864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758435863}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -19.09, y: 0.11, z: -12.67}
+  m_LocalScale: {x: 0.11449234, y: 0.11449234, z: 0.11449234}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!43 &1762586505
 Mesh:
   m_ObjectHideFlags: 0
@@ -55489,7 +55529,7 @@ Transform:
   - {fileID: 1134269889}
   - {fileID: 353643834}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1798531239
 Mesh:
@@ -65092,7 +65132,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2071875421
 MonoBehaviour:
@@ -66152,8 +66192,10 @@ MonoBehaviour:
   enableDialogue: 1
   yesText: What's the latest report on broken tech stuff for today?
   noText: Why is that piece of paper stuck on the screen?
-  correctActions: []
-  wrongActions: []
+  yesActions:
+  - {fileID: 2085307412}
+  noActions:
+  - {fileID: 2085307411}
 --- !u!114 &2085307411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66171,8 +66213,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &2085307412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66190,8 +66232,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &2085307413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92622,7 +92664,7 @@ Transform:
   - {fileID: 5564759282208614506}
   - {fileID: 2001255452}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &5564759282208614496
 Transform:
@@ -93711,6 +93753,8 @@ GameObject:
   - component: {fileID: 5564759282208834750}
   - component: {fileID: 5564759282208834754}
   - component: {fileID: 5564759282208834756}
+  - component: {fileID: 5564759282208834757}
+  - component: {fileID: 5564759282208834758}
   m_Layer: 0
   m_Name: ToonBot(Free)
   m_TagString: Untagged
@@ -93826,8 +93870,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  correctActions: []
-  wrongActions: []
+  yesActions: []
+  noActions: []
 --- !u!114 &5564759282208834751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93843,6 +93887,9 @@ MonoBehaviour:
   customGameObjects:
   - gO: {fileID: 2001255451}
     activeStatus: 0
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &5564759282208834752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93857,11 +93904,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message:
   - You covered the robot's head and navigation camera with the tea towel.
+  - You covered the robot's head and navigation camera with the tea towel.
   enableDialogue: 1
   yesText: Make robot fall down the staris again.
   noText: Had enough.
-  correctActions: []
-  wrongActions: []
+  yesActions:
+  - {fileID: 5564759282208834757}
+  noActions:
+  - {fileID: 5564759282208834758}
 --- !u!114 &5564759282208834753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93876,12 +93926,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
   useItem: 1
-  correctActions:
-  - {fileID: 5564759282208834752}
+  yesActions:
+  - {fileID: 5564759282208834756}
   - {fileID: 5564759282208834751}
   - {fileID: 5564759282208834755}
-  - {fileID: 5564759282208834756}
-  wrongActions:
+  - {fileID: 5564759282208834752}
+  noActions:
   - {fileID: 5564759282208834750}
   requiredItem: Towel
   itemId: 2
@@ -93920,6 +93970,9 @@ MonoBehaviour:
   customGameObjects:
   - gO: {fileID: 353643833}
     activeStatus: 0
+  reset: 0
+  spawnPos: {fileID: 0}
+  toReset: {fileID: 0}
 --- !u!114 &5564759282208834756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93934,6 +93987,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchCam: {fileID: 431749001}
   exiting: 0
+--- !u!114 &5564759282208834757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564759282208834742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806381314f8b3d543b5f2715eee682ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customGameObjects:
+  - gO: {fileID: 0}
+    activeStatus: 0
+  reset: 1
+  spawnPos: {fileID: 1758435864}
+  toReset: {fileID: 5564759282208834742}
+--- !u!114 &5564759282208834758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564759282208834742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2548b253b24c284799aaa1f759c791a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchCam: {fileID: 431749001}
+  exiting: 1
 --- !u!1 &5595337316686806163
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,15 +8,15 @@ using UnityEditor.SceneManagement; //for marking scene dirty.
 public class ItemActionEditor : Editor
 {
     ItemAction source;
-    SerializedProperty s_itemDatabase, s_useItem, s_correctActions, s_wrongActions, r_item;
+    SerializedProperty s_itemDatabase, s_useItem, s_yesActions, s_noActions, r_item;
 
     private void OnEnable()
     {
         source = (ItemAction)target;
         s_itemDatabase = serializedObject.FindProperty("itemDatabase");
         s_useItem = serializedObject.FindProperty("useItem");
-        s_correctActions = serializedObject.FindProperty("correctActions");
-        s_wrongActions = serializedObject.FindProperty("wrongActions");
+        s_yesActions = serializedObject.FindProperty("yesActions");
+        s_noActions = serializedObject.FindProperty("noActions");
         r_item = serializedObject.FindProperty("requiredItem");
 
     }
@@ -39,14 +39,14 @@ public class ItemActionEditor : Editor
             //draw the item entry
             DrawItemEntry(source.CurrentItem);
 
-            EditorExtensions.DrawActionsArray(s_correctActions, "Correct Actions: "); //new version with static function from extensions, arguments
+            EditorExtensions.DrawActionsArray(s_yesActions, "Correct Actions: "); //new version with static function from extensions, arguments
             //are the serialized array of actions from ItemAction.cs,  and the label string for editorGUIlayour label field.
 
-            //EditorGUILayout.PropertyField(s_correctActions, new GUIContent("Correct Actions: "), true); //this was just for testing out.
+            //EditorGUILayout.PropertyField(s_yesActions, new GUIContent("Correct Actions: "), true); //this was just for testing out.
 
-            EditorExtensions.DrawActionsArray(s_wrongActions, "Wrong Actions: ");
+            EditorExtensions.DrawActionsArray(s_noActions, "no Actions: ");
 
-            //EditorGUILayout.PropertyField(s_wrongActions, new GUIContent("Wrong Actions: "), true);
+            //EditorGUILayout.PropertyField(s_noActions, new GUIContent("no Actions: "), true);
 
             
         }

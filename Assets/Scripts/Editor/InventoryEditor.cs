@@ -47,7 +47,7 @@ public class InventoryEditor : Editor
     }
 
     void DrawItemEntry(SerializedProperty item, int id) //copied from itemdatabase editor but modified, int id is to fix an issue where the
-        //id is wrong.
+        //id is no.
     {
         GUILayout.BeginVertical("box");
 

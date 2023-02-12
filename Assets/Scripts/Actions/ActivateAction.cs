@@ -8,6 +8,9 @@ public class ActivateAction : Actions
     [SerializeField] List<CustomGameObject> customGameObjects = new List<CustomGameObject>();
     //creating a new list as defined in the CustomGameObject class below.
     private bool activated;
+    [SerializeField] bool reset;
+    [SerializeField] Transform spawnPos;
+    [SerializeField] GameObject toReset;
 
     public override void Act()
     {
@@ -30,9 +33,14 @@ public class ActivateAction : Actions
             }
             
         }
-        
-        
+
+        if (reset)
+            toReset.transform.position = spawnPos.position;
+
+
     }
+
+
 }
 
 [System.Serializable] //serializable class, interesting!
