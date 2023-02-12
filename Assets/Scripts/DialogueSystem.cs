@@ -42,8 +42,8 @@ public class DialogueSystem : MonoBehaviour
 
     }
 
-    public void ShowMessages(List<string> messages, bool dialogue, List<Actions> yesActions = null, List<Actions> noActions = null, string yes = "Yes", string no = "No")
-    // = null is so that when there are no yes,no actions in the dialog we don't have to send anything over.
+    public void ShowMessages(List<string> messages, bool dialogue, List<Actions> correctActions = null, List<Actions> wrongActions = null, string yes = "Yes", string no = "No")
+    // = null is so that when there are no yes,Wrong Actions in the dialog we don't have to send anything over.
     {
 
 
@@ -67,8 +67,8 @@ public class DialogueSystem : MonoBehaviour
             {
                 panel.SetActive(false);
 
-                if (yesActions != null)
-                    AssignActionstoButtons(yesActions);
+                if (correctActions != null)
+                    AssignActionstoButtons(correctActions);
             });
 
             noText.text = no;
@@ -78,8 +78,8 @@ public class DialogueSystem : MonoBehaviour
                 panel.SetActive(false);
 
 
-                if (noActions != null)
-                    AssignActionstoButtons(noActions);
+                if (wrongActions != null)
+                    AssignActionstoButtons(wrongActions);
             });
         }
 

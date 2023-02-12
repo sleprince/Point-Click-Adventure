@@ -90,7 +90,7 @@ public class Interactable : MonoBehaviour
             //_playerScript.I values and what cursor type they mean
             //0 = Look
             //1 = Talk
-            //2 = Pick Up/Give
+            //2 = Pick Up/use
             //3 = Walk/Use
             
             //creates an array of arrays
@@ -104,7 +104,7 @@ public class Interactable : MonoBehaviour
                 if (pScript.I == i) // _playerScript.I is the int that determines which type of mouse cursor is being used
                 {
                     
-                    if (allActions[i].Any() == false) //if there are no actions of that type.
+                    if (allActions[i].Any() == false) //if there are Wrong Actions of that type.
                     {
                         List<string> response = ShuffleList.ShuffleListItems(nullresponses.Responses);
                         DialogueSystem.Instance.InspectMessage(response); //play a null response message.

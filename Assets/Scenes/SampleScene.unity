@@ -8484,12 +8484,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 1
-  amount: 1
-  yesActions:
-  - {fileID: 268476246}
-  noActions:
-  - {fileID: 268476245}
+  useItem: 0
+  correctActions: []
+  wrongActions: []
   requiredItem: 
   itemId: 1
   currentItem:
@@ -8498,7 +8495,6 @@ MonoBehaviour:
     itemDescription: Delicious chicken dinner.
     itemSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     itemCursor: {fileID: 0}
-    allowMultiple: 1
     amount: 0
 --- !u!114 &268476245
 MonoBehaviour:
@@ -8517,8 +8513,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &268476246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8536,8 +8532,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!1 &279729585
 GameObject:
   m_ObjectHideFlags: 0
@@ -9163,8 +9159,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &305208257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9260,10 +9256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 0
-  amount: 0
-  yesActions: []
-  noActions: []
+  useItem: 0
+  correctActions: []
+  wrongActions: []
   requiredItem: 
   itemId: 2
   currentItem:
@@ -9273,7 +9268,6 @@ MonoBehaviour:
       discount.
     itemSprite: {fileID: 21300000, guid: 2918f35087a374a4489913db841395c8, type: 3}
     itemCursor: {fileID: 2800000, guid: 0a9b6de55edcf6347b0624f13fceed19, type: 3}
-    allowMultiple: 0
     amount: 0
 --- !u!1001 &312975353
 PrefabInstance:
@@ -17354,12 +17348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 0
-  amount: 0
-  yesActions:
-  - {fileID: 0}
-  noActions:
-  - {fileID: 0}
+  useItem: 0
+  correctActions: []
+  wrongActions: []
   requiredItem: 
   itemId: 1
   currentItem:
@@ -17368,7 +17359,6 @@ MonoBehaviour:
     itemDescription: 
     itemSprite: {fileID: 0}
     itemCursor: {fileID: 0}
-    allowMultiple: 0
     amount: 0
 --- !u!1 &670112547
 GameObject:
@@ -49744,10 +49734,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 0
-  amount: 0
-  yesActions: []
-  noActions: []
+  useItem: 0
+  correctActions: []
+  wrongActions: []
   requiredItem: 
   itemId: 0
   currentItem:
@@ -49756,7 +49745,6 @@ MonoBehaviour:
     itemDescription: An unlabelled key for an unknown door.
     itemSprite: {fileID: 21300000, guid: 70744b7263cc4b54a984222212dd9308, type: 3}
     itemCursor: {fileID: 2800000, guid: 4a7981dfbd6af96478030e1c19a89c34, type: 3}
-    allowMultiple: 0
     amount: 0
 --- !u!114 &1546186933
 MonoBehaviour:
@@ -49794,8 +49782,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &1546186935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55774,8 +55762,8 @@ GameObject:
   - component: {fileID: 1701069892}
   - component: {fileID: 1701069891}
   - component: {fileID: 1701069890}
-  - component: {fileID: 1701069889}
   - component: {fileID: 1701069888}
+  - component: {fileID: 1701069889}
   - component: {fileID: 1701069897}
   m_Layer: 0
   m_Name: CommsDoor
@@ -55817,8 +55805,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &1701069889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55863,8 +55851,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &1701069892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55878,12 +55866,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 1
-  amount: 0
-  yesActions:
-  - {fileID: 1701069891}
+  useItem: 1
+  correctActions:
   - {fileID: 1701069890}
-  noActions:
+  - {fileID: 1701069891}
+  wrongActions:
   - {fileID: 1701069888}
   requiredItem: Key
   itemId: 0
@@ -55893,7 +55880,6 @@ MonoBehaviour:
     itemDescription: An unlabelled key for an unknown door.
     itemSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     itemCursor: {fileID: 0}
-    allowMultiple: 0
     amount: 0
 --- !u!114 &1701069893
 MonoBehaviour:
@@ -68312,10 +68298,8 @@ MonoBehaviour:
   enableDialogue: 1
   yesText: What's the latest report on broken tech stuff for today?
   noText: Why is that piece of paper stuck on the screen?
-  yesActions:
-  - {fileID: 2085307412}
-  noActions:
-  - {fileID: 2085307411}
+  correctActions: []
+  wrongActions: []
 --- !u!114 &2085307411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68333,8 +68317,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &2085307412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68352,8 +68336,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &2085307413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95986,8 +95970,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &5564759282208834751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96020,8 +96004,8 @@ MonoBehaviour:
   enableDialogue: 0
   yesText: 
   noText: 
-  yesActions: []
-  noActions: []
+  correctActions: []
+  wrongActions: []
 --- !u!114 &5564759282208834753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96035,13 +96019,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: c6590cc01bb471f4bbfe362de0e2a7d7, type: 2}
-  giveItem: 1
-  amount: 0
-  yesActions:
+  useItem: 1
+  correctActions:
   - {fileID: 5564759282208834752}
   - {fileID: 5564759282208834751}
   - {fileID: 5564759282208834755}
-  noActions:
+  wrongActions:
   - {fileID: 5564759282208834750}
   requiredItem: Towel
   itemId: 2
@@ -96052,7 +96035,6 @@ MonoBehaviour:
       discount.
     itemSprite: {fileID: 21300000, guid: 2918f35087a374a4489913db841395c8, type: 3}
     itemCursor: {fileID: 2800000, guid: 0a9b6de55edcf6347b0624f13fceed19, type: 3}
-    allowMultiple: 0
     amount: 0
 --- !u!114 &5564759282208834754
 MonoBehaviour:

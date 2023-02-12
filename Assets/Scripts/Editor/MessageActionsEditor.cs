@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(MessageAction))]
 public class MessageActionsEditor : Editor
 {
-    SerializedProperty s_messages, s_enableDialogue, s_yesText, s_noText, s_yesActions, s_noActions;
+    SerializedProperty s_messages, s_enableDialogue, s_yesText, s_noText, s_correctActions, s_wrongActions;
 
     private void OnEnable()
     {
@@ -14,8 +14,8 @@ public class MessageActionsEditor : Editor
         s_enableDialogue = serializedObject.FindProperty("enableDialogue");
         s_yesText = serializedObject.FindProperty("yesText");
         s_noText = serializedObject.FindProperty("noText");
-        s_yesActions = serializedObject.FindProperty("yesActions");
-        s_noActions = serializedObject.FindProperty("noActions");
+        s_correctActions = serializedObject.FindProperty("correctActions");
+        s_wrongActions = serializedObject.FindProperty("wrongActions");
     }
 
     public override void OnInspectorGUI()
@@ -44,10 +44,10 @@ public class MessageActionsEditor : Editor
         if (s_enableDialogue.boolValue)
         {
             EditorGUILayout.PropertyField(s_yesText, new GUIContent("Yes Button Label"), GUILayout.Height(30f));
-            EditorExtensions.DrawActionsArray(s_yesActions, "Yes Actions");
+            EditorExtensions.DrawActionsArray(s_correctActions, "Correct Actions");
 
             EditorGUILayout.PropertyField(s_noText, new GUIContent("No Button Label"), GUILayout.Height(30f));
-            EditorExtensions.DrawActionsArray(s_noActions, "No Actions");
+            EditorExtensions.DrawActionsArray(s_wrongActions, "Wrong Actions");
         }
 
         GUILayout.EndVertical();

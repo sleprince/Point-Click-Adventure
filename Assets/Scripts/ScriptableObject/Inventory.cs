@@ -34,16 +34,16 @@ public class Inventory : ScriptableObject
         return 0;
     }
 
-    public void ModifyItemAmount(Item item, int amount, bool give = false)
+    public void ModifyItemAmount(Item item, int amount, bool use = false)
     {
         for (int i = 0; i < inventory.Count; i++)
         {
             if (inventory[i].ItemId == item.ItemId)
             {
 
-                    inventory[i].ModifyAmount(give ? -amount : amount); //if true subtract amount, if false add.
+                    inventory[i].ModifyAmount(use ? -amount : amount); //if true subtract amount, if false add.
 
-                    if (inventory[i].Amount <= 0 && give)
+                    if (inventory[i].Amount <= 0 && use)
                         inventory.RemoveAt(i);
                 
                 else

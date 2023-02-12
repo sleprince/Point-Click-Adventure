@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     private bool turning; //are they turning.
     private Quaternion targetRot; //rotation value of the target.
 
-    private LineRenderer line; //to give a pseudo visual of what the raycast is doing.
+    private LineRenderer line; //to use a pseudo visual of what the raycast is doing.
 
     private PlayerAnimation playerAnim = new PlayerAnimation(); //with this way of doing it we don't need to attach the
     //animator in the editor.

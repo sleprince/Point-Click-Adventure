@@ -10,7 +10,7 @@ public class MessageAction : Actions
     [SerializeField] List<string> message; //now our messages are an array of messages.
     [SerializeField] bool enableDialogue;
     [SerializeField] string yesText, noText;
-    [SerializeField] List<Actions> yesActions, noActions;
+    [SerializeField] List<Actions> correctActions, wrongActions;
 
 
 
@@ -24,7 +24,7 @@ public class MessageAction : Actions
         //Debug.Log(message);      
         
         //passing over all the serialized fields above.
-        DialogueSystem.Instance.ShowMessages(message, enableDialogue, yesActions, noActions, yesText, noText);
+        DialogueSystem.Instance.ShowMessages(message, enableDialogue, correctActions, wrongActions, yesText, noText);
         DialogueSystem.Instance.msgId = 0; //to stop the same message coming up again if you click the NPC again straight away. Doesn't work.
         
             

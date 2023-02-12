@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemAction : Actions //used to give and receive items during runtime.
+public class ItemAction : Actions //used to use and pick up items during runtime.
 {
     [SerializeField] ItemDatabase itemDatabase; //drag and drop item database object here in editor.
-    [SerializeField] bool giveItem; //this will decide whether we are giving or receiving the item.
-    [SerializeField] Actions[] yesActions, noActions;
+    [SerializeField] bool useItem; //this will decide whether we are using or picking up the item.
+    [SerializeField] Actions[] correctActions, wrongActions;
     [SerializeField] string requiredItem;
 
     private PlayerScript _pScript;
@@ -48,12 +48,12 @@ public class ItemAction : Actions //used to give and receive items during runtim
 
         Item currItem = InventoryItemUI.ChosenItem;
         
-        if(giveItem && currItem != null)
+        if(useItem && currItem != null)
             rightItem = ItemMatch(currItem.ItemName);
 
 
-            //check if giveItem is true, then give the item
-        if (giveItem && rightItem) //only do this action if the currentItem is the requiredItem.
+            //check if useItem is true, then use the item
+        if (useItem && rightItem) //only do this action if the currentItem is the requiredItem.
         {
             int itemOwned = DataManager.Instance.Inventory.CheckAmount(CurrentItem);
 
@@ -61,23 +61,24 @@ public class ItemAction : Actions //used to give and receive items during runtim
             if (itemOwned == 1)
             {
 
-                    //pass the item, invoke yesActions
+                    //pass the item, invoke correctActions
+                    Extensions.RunActions(correctActions);
+
+                    //run the actions first, then remove the item from inventory
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, -1, true);
 
-                    Extensions.RunActions(yesActions);
-                
 
             }
         }
         else
         {
 
-                    Extensions.RunActions(noActions);
+                    Extensions.RunActions(wrongActions);
                 
-                if (!giveItem) //had to add second part otherwise it gives the item when you're trying to use an item
+                if (!useItem) //had to add second part otherwise it uses the item when you're trying to pick up an item
                 {
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, 1);
-                    Extensions.RunActions(yesActions);
+                    Extensions.RunActions(correctActions);
                 }
             
         }

@@ -8,15 +8,15 @@ using UnityEditor.SceneManagement; //for marking scene dirty.
 public class ItemActionEditor : Editor
 {
     ItemAction source;
-    SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, r_item;
+    SerializedProperty s_itemDatabase, s_useItem, s_correctActions, s_wrongActions, r_item;
 
     private void OnEnable()
     {
         source = (ItemAction)target;
         s_itemDatabase = serializedObject.FindProperty("itemDatabase");
-        s_giveItem = serializedObject.FindProperty("giveItem");
-        s_yesActions = serializedObject.FindProperty("yesActions");
-        s_noActions = serializedObject.FindProperty("noActions");
+        s_useItem = serializedObject.FindProperty("useItem");
+        s_correctActions = serializedObject.FindProperty("correctActions");
+        s_wrongActions = serializedObject.FindProperty("wrongActions");
         r_item = serializedObject.FindProperty("requiredItem");
 
     }
@@ -32,21 +32,21 @@ public class ItemActionEditor : Editor
             //draw the popup or enum for selecting items
             source.itemId = EditorGUILayout.Popup(source.itemId, source.ItemDatabase.ItemsNames.ToArray());
 
-            EditorGUILayout.PropertyField(s_giveItem, new GUIContent("Give Item: "));
+            EditorGUILayout.PropertyField(s_useItem, new GUIContent("Use Item: "));
 
             EditorGUILayout.PropertyField(r_item, new GUIContent("Required Item: ")); //adding this in so you can specify item needed to use on this interactable.
 
             //draw the item entry
             DrawItemEntry(source.CurrentItem);
 
-            EditorExtensions.DrawActionsArray(s_yesActions, "Yes Actions: "); //new version with static function from extensions, arguments
+            EditorExtensions.DrawActionsArray(s_correctActions, "Correct Actions: "); //new version with static function from extensions, arguments
             //are the serialized array of actions from ItemAction.cs,  and the label string for editorGUIlayour label field.
 
-            //EditorGUILayout.PropertyField(s_yesActions, new GUIContent("Yes Actions: "), true); //this was just for testing out.
+            //EditorGUILayout.PropertyField(s_correctActions, new GUIContent("Correct Actions: "), true); //this was just for testing out.
 
-            EditorExtensions.DrawActionsArray(s_noActions, "No Actions: ");
+            EditorExtensions.DrawActionsArray(s_wrongActions, "Wrong Actions: ");
 
-            //EditorGUILayout.PropertyField(s_noActions, new GUIContent("No Actions: "), true);
+            //EditorGUILayout.PropertyField(s_wrongActions, new GUIContent("Wrong Actions: "), true);
 
             
         }
