@@ -26,14 +26,9 @@ public class Inventory : ScriptableObject
         {
             if (inventory[i].ItemId == item.ItemId)
             {
-                if (inventory[i].AllowMultiple)
-                {
-                    return inventory[i].Amount;
-                }
-                else
-                {
+                
                     return 1;
-                }
+                
             }
         }
         return 0;
@@ -45,13 +40,12 @@ public class Inventory : ScriptableObject
         {
             if (inventory[i].ItemId == item.ItemId)
             {
-                if (inventory[i].AllowMultiple)
-                {
+
                     inventory[i].ModifyAmount(give ? -amount : amount); //if true subtract amount, if false add.
 
                     if (inventory[i].Amount <= 0 && give)
                         inventory.RemoveAt(i);
-                }
+                
                 else
                 {
                     inventory.RemoveAt(i);

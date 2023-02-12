@@ -7,7 +7,6 @@ public class ItemAction : Actions //used to give and receive items during runtim
 {
     [SerializeField] ItemDatabase itemDatabase; //drag and drop item database object here in editor.
     [SerializeField] bool giveItem; //this will decide whether we are giving or receiving the item.
-    [SerializeField] int amount;
     [SerializeField] Actions[] yesActions, noActions;
     [SerializeField] string requiredItem;
 
@@ -59,50 +58,28 @@ public class ItemAction : Actions //used to give and receive items during runtim
             int itemOwned = DataManager.Instance.Inventory.CheckAmount(CurrentItem);
 
             //check if we own the item
-            if (itemOwned > 0)
+            if (itemOwned == 1)
             {
-                if (CurrentItem.AllowMultiple && amount <= itemOwned)
-                {
+
                     //pass the item, invoke yesActions
-                    DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, amount, true);
+                    DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, -1, true);
 
                     Extensions.RunActions(yesActions);
-                }
-                else if (!CurrentItem.AllowMultiple && itemOwned == 1)
-                {
-                    //remove the item from inventory, and then invoke yesActions
-                    DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, -itemOwned, true);
+                
 
-                    Extensions.RunActions(yesActions);
-                }
-                else
-                {
-                    //don't have the item
-                    Extensions.RunActions(noActions);
-                }
             }
         }
         else
         {
-            //else receive the item
-            if (CurrentItem.AllowMultiple)
-            {
-                DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, amount);
-                Extensions.RunActions(yesActions);
-            }
-            else if (!CurrentItem.AllowMultiple) 
-            {
-                if (DataManager.Instance.Inventory.CheckAmount(CurrentItem) == 1)
-                {
-                    //already have
+
                     Extensions.RunActions(noActions);
-                }
-                else if (!giveItem) //had to add second part otherwise it gives the item when you're trying to use an item
+                
+                if (!giveItem) //had to add second part otherwise it gives the item when you're trying to use an item
                 {
                     DataManager.Instance.Inventory.ModifyItemAmount(CurrentItem, 1);
                     Extensions.RunActions(yesActions);
                 }
-            }
+            
         }
 
 

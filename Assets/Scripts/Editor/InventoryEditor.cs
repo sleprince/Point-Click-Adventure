@@ -76,9 +76,6 @@ public class InventoryEditor : Editor
         //the sprite preview.
        // GUILayout.Label(spriteViewer); //label can render text or a texture. taken out because too big.
 
-        if (item.FindPropertyRelative("allowMultiple").boolValue)
-            EditorGUILayout.PropertyField(item.FindPropertyRelative("amount"));
-
         GUILayout.EndHorizontal();
 
         GUILayout.EndVertical();

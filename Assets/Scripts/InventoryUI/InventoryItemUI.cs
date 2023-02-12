@@ -8,7 +8,6 @@ public class InventoryItemUI : MonoBehaviour
 {
     private Item thisItem;
     private Button button;
-    private TMPro.TextMeshProUGUI amountText;
     private InventorySystemUI invSystem; //parent class that handles redrawing changes in items held
 
     private static Item chosenItem; //has to be static for ItemAction to access it.
@@ -34,7 +33,6 @@ public class InventoryItemUI : MonoBehaviour
         this.invSystem = invSystem; //have to use this. because the internal variable has the same name
 
         button = GetComponent<Button>();
-        amountText = GetComponentInChildren<TMPro.TextMeshProUGUI>();
 
         //descriptionText = descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>();
 
@@ -42,8 +40,6 @@ public class InventoryItemUI : MonoBehaviour
 
         //invSystemUI.descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = item.ItemDesc; 
         
-        amountText.gameObject.SetActive(item.AllowMultiple);
-        amountText.text = "x " + thisItem.Amount;
         
             //add a listener for each button
             button.onClick.AddListener(() => OnClick(button, item));

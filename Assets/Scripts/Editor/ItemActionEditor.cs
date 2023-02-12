@@ -8,7 +8,7 @@ using UnityEditor.SceneManagement; //for marking scene dirty.
 public class ItemActionEditor : Editor
 {
     ItemAction source;
-    SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, s_amount, r_item;
+    SerializedProperty s_itemDatabase, s_giveItem, s_yesActions, s_noActions, r_item;
 
     private void OnEnable()
     {
@@ -17,7 +17,6 @@ public class ItemActionEditor : Editor
         s_giveItem = serializedObject.FindProperty("giveItem");
         s_yesActions = serializedObject.FindProperty("yesActions");
         s_noActions = serializedObject.FindProperty("noActions");
-        s_amount = serializedObject.FindProperty("amount");
         r_item = serializedObject.FindProperty("requiredItem");
 
     }
@@ -92,9 +91,6 @@ public class ItemActionEditor : Editor
         // var spriteViewer = AssetPreview.GetAssetPreview(item.ItemSprite);
         // GUILayout.Label(spriteViewer);
 
-
-        if (item.AllowMultiple)
-            EditorGUILayout.PropertyField(s_amount);
 
         GUILayout.EndHorizontal();
 
