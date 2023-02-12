@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] Actions[] inspectActions;
     [SerializeField] Actions[] activateActions;
     [SerializeField] Actions[] itemActions;
+
+    [SerializeField] Actions[] otherActions;
     
     private NullResponses nullresponses; //holds the array of messages that will show at random when you try and do
     //an invalid interaction.
@@ -127,8 +129,13 @@ public class Interactable : MonoBehaviour
                 
             }
 
-            
-            pScript.I = 3;
+        for (int i = 0; i < otherActions.Length; i++) //do actions that can happen whichever mouse curser is selected.
+        {
+            otherActions[i].Act();
+        }
+
+
+        pScript.I = 3;
 
             // 2D array, i.e. array of references to arrays. needs these to be in scope but it sounds like they're global anyway
             //IAction[][] allActions = { inspectActions, messageActions, itemActions, activateActions };

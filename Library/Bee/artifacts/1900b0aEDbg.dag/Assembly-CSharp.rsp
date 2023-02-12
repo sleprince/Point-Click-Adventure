@@ -359,6 +359,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Actions/ActivateAction.cs"
 "Assets/Scripts/Actions/AnimateAction.cs"
+"Assets/Scripts/Actions/CameraAction.cs"
 "Assets/Scripts/Actions/InspectAction.cs"
 "Assets/Scripts/Actions/ItemAction.cs"
 "Assets/Scripts/Actions/MessageAction.cs"
