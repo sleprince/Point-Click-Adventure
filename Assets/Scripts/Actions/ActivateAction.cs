@@ -19,7 +19,7 @@ public class ActivateAction : Actions
                 for (int i = 0; i < customGameObjects.Count; i++)
             {
                 customGameObjects[i].GO.SetActive(customGameObjects[i].ActiveStatus);
-                activated = true;
+                //activated = true;
             }
                 
         }
@@ -29,7 +29,7 @@ public class ActivateAction : Actions
             for (int i = 0; i < customGameObjects.Count; i++)
             {
                 customGameObjects[i].GO.SetActive(!customGameObjects[i].ActiveStatus); //do the opposite the 2nd time
-                activated = false;
+                //activated = false;
             }
             
         }
