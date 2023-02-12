@@ -7,13 +7,11 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CameraAction : Actions
+public class CameraTrigger : MonoBehaviour
 {
     //CinemachineVirtualCamera mainCam;
     [SerializeField] CinemachineVirtualCamera switchCam;
     [SerializeField] private bool exiting;
-
-    //[SerializeField] BoxCollider trigger;
 
     private void Start()
     {
@@ -21,17 +19,21 @@ public class CameraAction : Actions
 
     }
 
-    public override void Act()
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log(name + " colliided with " + other.gameObject.name);
+        //collided with
+
         if (!exiting)
         {
             switchCam.Priority = 11;
-            exiting= true;
+            exiting = true;
         }
         else
+        {
             switchCam.Priority = 9;
-            exiting= false;
-
+            exiting = false;
+        }
 
     }
 
