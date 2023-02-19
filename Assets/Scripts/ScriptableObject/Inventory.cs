@@ -70,4 +70,11 @@ public class Inventory : ScriptableObject
         OnItemChange(inventory);
     }
 
+    public void ClearInventory()
+    {
+        inventory.Clear();
+
+    }
+
+
 }//class end.
