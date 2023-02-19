@@ -18,7 +18,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] Actions[] itemActions;
 
     [SerializeField] Actions[] otherActions;
-    
+
+    public Actions[] InspectActions { get { return inspectActions; } }
+
     private NullResponses nullresponses; //holds the array of messages that will show at random when you try and do
     //an invalid interaction.
     
