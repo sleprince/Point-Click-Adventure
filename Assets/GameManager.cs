@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         plInv.ClearInventory();
 
         plInv.AddItem(itemDatabase.GetItem(1));
-        plInv.AddItem(itemDatabase.GetItem(3));
+        //plInv.AddItem(itemDatabase.GetItem(3));
 
         StartCoroutine(ShowIntroMessage());
 
