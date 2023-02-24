@@ -6,13 +6,15 @@ public class OnMouseOverLabel : MonoBehaviour
 {
 
     private GameObject _labelText;
-    private bool _viewAll;
+    //private bool _viewAll;
     private new string name;
 
     void Start()
     {
-        name = GetComponentInChildren<Canvas>().name;
-        _labelText = GameObject.Find(name);
+        //name = GetComponentInChildren<Canvas>().name;
+        //_labelText = GameObject.Find(name);
+
+        _labelText = GetComponentInChildren<Canvas>().gameObject;
         
         _labelText.SetActive(false);
     }
