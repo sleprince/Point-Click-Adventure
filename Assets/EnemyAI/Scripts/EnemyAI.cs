@@ -76,7 +76,7 @@ public class EnemyAI : MonoBehaviour {
             agent.destination = PlayerScript.GetInstance().Agent.transform.position;
 
 
-                float catchRange = 5f;
+                float catchRange = 2f;
             if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < catchRange) {
                     // Target within catch range
 
@@ -85,7 +85,7 @@ public class EnemyAI : MonoBehaviour {
                 
             }
 
-            float stopChaseDistance = 15f;
+            float stopChaseDistance = 7f;
             if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) > stopChaseDistance) {
                 // Too far, stop chasing
                 state = State.Roaming;
