@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour {
     public GameManager game;
     public Transform spawnPos;
     public Transform mummySpawn;
+    public GameObject player;
 
     private void Awake() {
 
@@ -52,22 +53,22 @@ public class EnemyAI : MonoBehaviour {
                 FindTarget();
                 break;
         case State.ChaseTarget:
-            agent.destination = PlayerScript.GetInstance().Agent.transform.position;
+            agent.destination = player.transform.position;
 
 
                 float catchRange = 2f;
-            if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < catchRange) {
+            if (Vector3.Distance(transform.position, player.transform.position) < catchRange) {
                     // Target within catch range
 
                     //Debug.Log("You got caught.");
                     game.Lose();
-                    PlayerScript.GetInstance().Agent.transform.position = startingPosition;
+                    player.transform.position = startingPosition;
                     agent.transform.position = mummySpawn.position;
 
             }
 
             float stopChaseDistance = 7f;
-            if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) > stopChaseDistance) {
+            if (Vector3.Distance(transform.position, player.transform.position) > stopChaseDistance) {
                 // Too far, stop chasing
                 state = State.Roaming;
             }
@@ -89,7 +90,7 @@ public class EnemyAI : MonoBehaviour {
         float targetRange = 15f;
 
 
-        if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < targetRange) {
+        if (Vector3.Distance(transform.position, player.transform.position) < targetRange) {
             // Player within target range
             state = State.ChaseTarget;
         }
