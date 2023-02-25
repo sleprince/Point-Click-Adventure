@@ -35,17 +35,20 @@ public class PlayerScript : MonoBehaviour
     public List<MouseOptions> mouseOptions = new List<MouseOptions>();
 
     public int I { get { return i; } set { i = value; } } //editable value, public getter.
-    /*
-    void OnMouseEnter()
+
+
+    public static PlayerScript instance;
+    public static PlayerScript GetInstance()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        return instance;
     }
 
-    void OnMouseExit()
+    void Awake()
     {
-        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
-    */
+
 
     // Start is called before the first frame update
     void Start()
