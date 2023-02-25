@@ -75,9 +75,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        agent.speed = 7f;
+
+
         if (Input.GetMouseButtonDown(1)) //right mouse button to cycle between different cursors for different action types.
         {
-            agent.speed = 3.5f;
             
             i++;
             if (i == 4)
@@ -135,7 +137,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnClick()
     {
-        Debug.Log("Left mouse button clicked!");
+        //Debug.Log("Left mouse button clicked!");
 
         //variable of type RaycastHit called hit that contains data about where the
         //raycast hit.

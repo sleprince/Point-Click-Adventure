@@ -21,7 +21,7 @@ public class CameraTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(name + " colliided with " + other.gameObject.name);
+        //Debug.Log(name + " colliided with " + other.gameObject.name);
         //collided with
 
         if (!exiting)

@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Start() {
-        startingPosition = transform.position;
+        //startingPosition = transform.position;
         //roamPosition = GetRoamingPosition();
     }
 
@@ -50,17 +50,18 @@ public class EnemyAI : MonoBehaviour {
         default:
         case State.Roaming:
 
-            //agent.transform.Translate(roamPosition);
+                //agent.SetDestination(roamPosition);
 
-            float reachedPositionDistance = 10f;
-                //if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance) {
-                // Reached Roam Position
-                //    roamPosition = GetRoamingPosition();
-                // }
+                //agent.Move(transform.forward);
 
-
-
-                //StartCoroutine("SamplePos");
+                
+                float reachedPositionDistance = 10f;
+                /*
+                if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance) {
+                 //Reached Roam Position
+                    roamPosition = GetRoamingPosition();
+                 }
+                */
 
                 if (agent.remainingDistance < 0.5f)
                 {
@@ -69,32 +70,31 @@ public class EnemyAI : MonoBehaviour {
                 }
 
 
-
-                //transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
                 FindTarget();
                 break;
         case State.ChaseTarget:
-            agent.transform.Translate(PlayerScript.GetInstance().Agent.transform.position);
+            agent.destination = PlayerScript.GetInstance().Agent.transform.position;
 
 
-            float attackRange = 30f;
-            if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < attackRange) {
-                    // Target within attack range
+                float catchRange = 5f;
+            if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < catchRange) {
+                    // Target within catch range
 
                 Debug.Log("You got caught.");
 
                 
             }
 
-            float stopChaseDistance = 80f;
+            float stopChaseDistance = 15f;
             if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) > stopChaseDistance) {
                 // Too far, stop chasing
-                state = State.GoingBackToStart;
+                state = State.Roaming;
             }
             break;
+
+                /*
         case State.GoingBackToStart:
-            agent.transform.Translate(startingPosition);
+                agent.destination = startingPosition;
             
             reachedPositionDistance = 10f;
             if (Vector3.Distance(transform.position, startingPosition) < reachedPositionDistance) {
@@ -102,66 +102,29 @@ public class EnemyAI : MonoBehaviour {
                 state = State.Roaming;
             }
             break;
+                */
         }
     }
 
-    /*IEnumerator SamplePos()
-    {
-        while (gameOn)
-        {
-
-            Vector3 moveDirection = transform.forward * speed * Time.deltaTime;
-
-            if (NavMesh.SamplePosition(transform.position + moveDirection, out navMeshHit, 0.1f, NavMesh.AllAreas))
-            {
-                yield return new WaitForSeconds(3);
-
-                rotated = false;
-
-                if (!rotated)
-                {
-                    transform.Rotate(0, Random.Range(0, 180), 0);
-                    rotated = true;
-
-                    yield return new WaitForSeconds(3);
-                }
-
-
-
-            }
-            if (rotated)
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-
-            
-
-
-        }
-
-
-
-    }
-
-    */
 
     private Vector3 GetRandomPositionOnNavMesh()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * 10.0f;
+        Vector3 randomDirection = Random.insideUnitSphere * 20.0f;
         randomDirection += transform.position;
         NavMeshHit navMeshHit;
-        NavMesh.SamplePosition(randomDirection, out navMeshHit, 10.0f, NavMesh.AllAreas);
+        NavMesh.SamplePosition(randomDirection, out navMeshHit, 20.0f, NavMesh.AllAreas);
         return navMeshHit.position;
     }
 
-    //private Vector3 GetRoamingPosition() {
-    //    return startingPosition + UtilsClass.GetRandomDir() * Random.Range(10f, 70f);
-   // }
+    private Vector3 GetRoamingPosition() {
+        return startingPosition + UtilsClass.GetRandomDir() * Random.Range(10f, 70f);
+    }
 
     private void FindTarget() {
-        Vector3 targetRange = new Vector3(50f,0,50f);
+        float targetRange = 15f;
 
 
-        if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < targetRange.magnitude) {
+        if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < targetRange) {
             // Player within target range
             state = State.ChaseTarget;
         }
