@@ -16,6 +16,8 @@ public class EnemyAI : MonoBehaviour {
     private Vector3 destination;
 
     public GameManager game;
+    public Transform spawnPos;
+    public Transform mummySpawn;
 
     private void Awake() {
 
@@ -32,7 +34,7 @@ public class EnemyAI : MonoBehaviour {
     private void Start() {
 
         //use a spawnPos
-        //startingPosition = PlayerScript.GetInstance().Agent.transform.position;
+        startingPosition = spawnPos.position;
 
     }
 
@@ -60,6 +62,7 @@ public class EnemyAI : MonoBehaviour {
                     //Debug.Log("You got caught.");
                     game.Lose();
                     PlayerScript.GetInstance().Agent.transform.position = startingPosition;
+                    agent.transform.position = mummySpawn.position;
 
             }
 
