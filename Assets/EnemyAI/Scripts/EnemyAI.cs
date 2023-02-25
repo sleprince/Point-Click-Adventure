@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using CodeMonkey.Utils;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
-using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
@@ -42,9 +39,7 @@ public class EnemyAI : MonoBehaviour {
     private void Update() {
         switch (state) {
         default:
-        case State.Roaming:
-                
-                //float reachedPositionDistance = 10f;
+        case State.Roaming:         
 
                 if (agent.remainingDistance < 0.5f)
                 {
@@ -62,7 +57,7 @@ public class EnemyAI : MonoBehaviour {
             if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < catchRange) {
                     // Target within catch range
 
-                    Debug.Log("You got caught.");
+                    //Debug.Log("You got caught.");
                     game.Lose();
                     PlayerScript.GetInstance().Agent.transform.position = startingPosition;
 
