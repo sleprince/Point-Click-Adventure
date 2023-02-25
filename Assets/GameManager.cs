@@ -32,6 +32,16 @@ public class GameManager : MonoBehaviour
         introMessage.Act(); //show intro message
     }
 
+    public void Lose()
+    {
+        interact.InspectActions[1].Act();
+    }
+
+    public void Win()
+    {
+        interact.InspectActions[2].Act();
+    }
+
     // Update is called once per frame
     void Update()
     {

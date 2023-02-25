@@ -18175,13 +18175,16 @@ GameObject:
   - component: {fileID: 920193919}
   - component: {fileID: 920193921}
   - component: {fileID: 920193922}
+  - component: {fileID: 920193924}
+  - component: {fileID: 920193926}
+  - component: {fileID: 920193925}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &920193919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18220,30 +18223,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920193918}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 966817bd49cfe62448fdcf0f4b3a0776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   message:
-  - 'Another day, another broken museum interactive. The new expensive tech has gone
-    haywire, today''s schedule:
-
-
-    - Find the lost key to the comms room.
-
-    -
-    Get the robot museum guide back online.
-
-    - Stop the kids breaking the tech.
-
-    -
-    Deal with the rampaging Egyptian mummy downstairs.
-
-    - Check on the upstairs
-    gallery.
-
-'
+  - You got caught! Back to the start.
   enableDialogue: 0
   yesText: 
   noText: 
@@ -18256,17 +18242,61 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920193918}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 098ca0a4dc388ab4d8cc83ab8698e7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   messageActions: []
   inspectActions:
-  - {fileID: 920193921}
+  - {fileID: 920193924}
+  - {fileID: 920193926}
+  - {fileID: 920193925}
   activateActions: []
   itemActions: []
   otherActions: []
+--- !u!114 &920193924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920193918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2ae1e6327adc44688e1ea31c99c2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message:
+  - Get past the Mummy and out of the maze.
+--- !u!114 &920193925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920193918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2ae1e6327adc44688e1ea31c99c2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message:
+  - You did it!
+--- !u!114 &920193926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920193918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2ae1e6327adc44688e1ea31c99c2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message:
+  - You got caught! Back to the start.
 --- !u!1 &925415398
 GameObject:
   m_ObjectHideFlags: 0
@@ -55464,6 +55494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  game: {fileID: 920193919}
 --- !u!4 &856601670741933166
 Transform:
   m_ObjectHideFlags: 0

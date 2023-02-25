@@ -8,28 +8,20 @@ public class EnemyAI : MonoBehaviour {
 
     private enum State {
         Roaming,
-        ChaseTarget,
-        //ShootingTarget,
-        GoingBackToStart,
+        ChaseTarget
     }
 
-    //private IAimShootAnims aimShootAnims;
-    //private EnemyPathfindingMovement pathfindingMovement;
     private Vector3 startingPosition;
-    private Vector3 roamPosition;
-    //private float nextShootTime;
     private State state;
 
     private NavMeshAgent agent;
-    private NavMeshHit navMeshHit;
     public float speed = 1.0f;
-    //private bool gameOn = true;
-    //private bool rotated;
     private Vector3 destination;
 
+    public GameManager game;
+
     private void Awake() {
-        //pathfindingMovement = GetComponent<EnemyPathfindingMovement>();
-        //aimShootAnims = GetComponent<IAimShootAnims>();
+
         state = State.Roaming;
 
         agent = GetComponent<NavMeshAgent>();
@@ -41,34 +33,24 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Start() {
-        //startingPosition = transform.position;
-        //roamPosition = GetRoamingPosition();
+
+        //use a spawnPos
+        //startingPosition = PlayerScript.GetInstance().Agent.transform.position;
+
     }
 
     private void Update() {
         switch (state) {
         default:
         case State.Roaming:
-
-                //agent.SetDestination(roamPosition);
-
-                //agent.Move(transform.forward);
-
                 
-                float reachedPositionDistance = 10f;
-                /*
-                if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance) {
-                 //Reached Roam Position
-                    roamPosition = GetRoamingPosition();
-                 }
-                */
+                //float reachedPositionDistance = 10f;
 
                 if (agent.remainingDistance < 0.5f)
                 {
                     destination = GetRandomPositionOnNavMesh();
                     agent.SetDestination(destination);
                 }
-
 
                 FindTarget();
                 break;
@@ -80,9 +62,10 @@ public class EnemyAI : MonoBehaviour {
             if (Vector3.Distance(transform.position, PlayerScript.GetInstance().Agent.transform.position) < catchRange) {
                     // Target within catch range
 
-                Debug.Log("You got caught.");
+                    Debug.Log("You got caught.");
+                    game.Lose();
+                    PlayerScript.GetInstance().Agent.transform.position = startingPosition;
 
-                
             }
 
             float stopChaseDistance = 7f;
@@ -91,18 +74,6 @@ public class EnemyAI : MonoBehaviour {
                 state = State.Roaming;
             }
             break;
-
-                /*
-        case State.GoingBackToStart:
-                agent.destination = startingPosition;
-            
-            reachedPositionDistance = 10f;
-            if (Vector3.Distance(transform.position, startingPosition) < reachedPositionDistance) {
-                // Reached Start Position
-                state = State.Roaming;
-            }
-            break;
-                */
         }
     }
 
@@ -114,10 +85,6 @@ public class EnemyAI : MonoBehaviour {
         NavMeshHit navMeshHit;
         NavMesh.SamplePosition(randomDirection, out navMeshHit, 20.0f, NavMesh.AllAreas);
         return navMeshHit.position;
-    }
-
-    private Vector3 GetRoamingPosition() {
-        return startingPosition + UtilsClass.GetRandomDir() * Random.Range(10f, 70f);
     }
 
     private void FindTarget() {
