@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] MessageAction introMessage;
     [SerializeField] Interactable interact;
 
+    public GameObject winPanel;
+    public GameObject losePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +40,30 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
-        interact.InspectActions[1].Act();
+        //interact.InspectActions[1].Act();
+        losePanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Win()
     {
-        interact.InspectActions[2].Act();
+        //interact.InspectActions[2].Act();
+        winPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void AgainButton()
+    {
+        SceneManager.LoadScene("Mummy");
+        
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+
     }
 
     // Update is called once per frame
