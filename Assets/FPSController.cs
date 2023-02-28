@@ -25,6 +25,9 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    [SerializeField] PlayerAnimations playerAnim;
+    //public Animator animator;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -77,6 +80,8 @@ public class FPSController : MonoBehaviour
 
             transform.localEulerAngles = new Vector3(0, rotX, 0);
             playerCamera.transform.localEulerAngles = new Vector3(-rotY, rotX, 0);
+
+            playerAnim.UpdateAnimation(characterController.velocity.sqrMagnitude * 5);
         }
     }
 }
