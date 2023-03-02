@@ -18,13 +18,25 @@ public class Door : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(this + " collided with " + collision.gameObject.name);
+
+
         if(collision.gameObject.tag == "Player")
         {
             game.Win();
         }
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            game.Win();
+        }
     }
 
 
