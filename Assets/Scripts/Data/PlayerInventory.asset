@@ -20,13 +20,4 @@ MonoBehaviour:
       exhibition which started 2 weeks ago.
     itemSprite: {fileID: 21300000, guid: b714fb1d25934ad448dcba85417ee016, type: 3}
     itemCursor: {fileID: 2800000, guid: f83df11b8ee54bb4ab4ff260d3076db1, type: 3}
-    allowMultiple: 0
-    amount: 0
-  - itemId: 3
-    itemName: Crisp Packet
-    itemDescription: Packet of monster Chomp crisps, there's a QR code on the back
-      to take part in the competition.
-    itemSprite: {fileID: 21300000, guid: a5ccef3f996dbac4eb725f2943ab4bfa, type: 3}
-    itemCursor: {fileID: 2800000, guid: b6edab6d0e27ee741b9116e9a6d971fa, type: 3}
-    allowMultiple: 0
     amount: 0
