@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void AgainButton()
     {
-        SceneManager.LoadScene("Mummy");
+        SceneManager.LoadScene("MainScene");
         
     }
 
@@ -77,8 +77,9 @@ public class GameManager : MonoBehaviour
     {
         while (!Input.GetMouseButtonDown(0))
         {
-            yield return null; //delays the coroutine until mouse clicked
+            yield return new WaitForSeconds(0.5f); //delays the coroutine until mouse clicked
         }
+
         Scene scene = SceneManager.GetActiveScene();
 
         if (scene.name == "MainScene")
