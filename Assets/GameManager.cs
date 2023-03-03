@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject winPanel;
     public GameObject losePanel;
+    public GameObject pausePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShowIntroMessage());
 
         //DialogueSystem.Instance.InspectMessage(intro);
+
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pausePanel.SetActive(true);
+        }
+
 
     }
 
@@ -66,18 +77,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     IEnumerator ShowIntroMessage()
     {
         while (!Input.GetMouseButtonDown(0))
         {
-            yield return new WaitForSeconds(0.5f); //delays the coroutine until mouse clicked
+            yield return null; //delays the coroutine until mouse clicked
         }
 
         Scene scene = SceneManager.GetActiveScene();

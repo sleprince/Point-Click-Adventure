@@ -46,7 +46,7 @@ public class PlayerScript : MonoBehaviour
     void Awake()
     {
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
 
