@@ -1,6 +1,7 @@
 
 //Attach this script to a GameObject to have it output messages when your mouse hovers over it.
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnMouseOverLabel : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class OnMouseOverLabel : MonoBehaviour
     private GameObject _labelText;
     //private bool _viewAll;
     private new string name;
+    private Button btn;
+
 
     void Start()
     {
@@ -17,7 +20,12 @@ public class OnMouseOverLabel : MonoBehaviour
         _labelText = GetComponentInChildren<Canvas>().gameObject;
         
         _labelText.SetActive(false);
+
+        btn = GameObject.Find("AllButton").GetComponent<Button>();
+        btn.onClick.AddListener(ShowAll);
+
     }
+
 
     void Update()
     {
@@ -28,7 +36,14 @@ public class OnMouseOverLabel : MonoBehaviour
         
 
     }
-    
+
+    public void ShowAll()
+    {
+        _labelText.SetActive(!_labelText.activeInHierarchy); //if on switches it off, if off switches on.
+                                                             //toggle effect.
+
+    }
+
     void OnMouseOver()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message

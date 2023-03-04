@@ -76,6 +76,15 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    public void SwitchAction()
+    {
+        i++;
+        if (i == 4)
+            i = 0;
+        Cursor.SetCursor(mouseOptions[i].cursor, hotSpot, cursorMode);
+
+    }
+
     // Update is called once per frame
     void Update()
     {
