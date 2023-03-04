@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI; //needed to use Unity's AI functions.
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
     [SerializeField] private GameObject InventoryUI;
+    [SerializeField] private GameObject dialogueWindow;
+    [SerializeField] private Button invButton;
 
     public NavMeshAgent Agent { get { return agent; } } //public getter.
     
@@ -99,8 +103,12 @@ public class PlayerScript : MonoBehaviour
             }
         
         
-        if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing && !InventoryUI.activeSelf) //if left mouse button clicked.
+        if (Input.GetMouseButtonDown(0) && !DialogueSystem.Instance.conversing && !InventoryUI.activeSelf &&
+            !dialogueWindow.activeSelf && !invButton.IsInvoking() )
+            //if left mouse button clicked.
             //0 is left, 1 is right, 2 is middle.
+
+            //last part is so that it works anywhere other than the UI
         {
             OnClick();
         }
@@ -165,7 +173,8 @@ public class PlayerScript : MonoBehaviour
 
 
             //if raycast hits something move player.
-            if (hit.collider != null && (hit.collider.gameObject.layer != 2 && hit.collider.gameObject.layer != 5 ) && !InventoryUI.activeSelf) //if what it hit is not null, and not on the ignore raycast layer
+            if (hit.collider != null && (hit.collider.gameObject.layer != 2 && hit.collider.gameObject.layer != 5 ) && !InventoryUI.activeSelf
+                    && hit.collider.gameObject.tag != "UI") //if what it hit is not null, and not on the ignore raycast layer
             {
 
                 effect.Play();
