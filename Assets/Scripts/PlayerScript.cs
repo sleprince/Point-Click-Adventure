@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -25,9 +26,10 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] private ParticleSystem effect; //an effect that will occur when the player clicks somewhere.
 
-    [SerializeField] private GameObject InventoryUI;
+    public GameObject InventoryUI;
     [SerializeField] private GameObject dialogueWindow;
     [SerializeField] private Button invButton;
+    [SerializeField] private TextMeshProUGUI switchText;
 
     public NavMeshAgent Agent { get { return agent; } } //public getter.
     
@@ -82,6 +84,8 @@ public class PlayerScript : MonoBehaviour
         if (i == 4)
             i = 0;
         Cursor.SetCursor(mouseOptions[i].cursor, hotSpot, cursorMode);
+        //make the button show what type of action is selected currently
+        switchText.text = mouseOptions[i].cursorType;
 
     }
 
