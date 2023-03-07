@@ -17,8 +17,8 @@ namespace DigitalRuby.SoundManagerNamespace
 {
     public class SoundManagerDemo : MonoBehaviour
     {
-        public Slider SoundSlider;
-        public Slider MusicSlider;
+        //public Slider SoundSlider;
+        //public Slider MusicSlider;
         public InputField SoundCountTextBox;
         public Toggle PersistToggle;
 
@@ -45,10 +45,10 @@ namespace DigitalRuby.SoundManagerNamespace
 
         private void CheckPlayKey()
         {
-            if (SoundCountTextBox.isFocused)
-            {
-                return;
-            }
+            //if (SoundCountTextBox.isFocused)
+            //{
+            //    return;
+           // }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -78,10 +78,10 @@ namespace DigitalRuby.SoundManagerNamespace
             {
                 PlaySound(6);
             }
-            if (Input.GetKeyDown(KeyCode.Alpha8))
-            {
+            //if (Input.GetKeyDown(KeyCode.Alpha8))
+            //{
                 PlayMusic(0);
-            }
+            //}
             if (Input.GetKeyDown(KeyCode.Alpha9))
             {
                 PlayMusic(1);
@@ -119,12 +119,12 @@ namespace DigitalRuby.SoundManagerNamespace
 
         public void SoundVolumeChanged()
         {
-            SoundManager.SoundVolume = SoundSlider.value;
+            //SoundManager.SoundVolume = SoundSlider.value;
         }
 
         public void MusicVolumeChanged()
         {
-            SoundManager.MusicVolume = MusicSlider.value;
+            //SoundManager.MusicVolume = MusicSlider.value;
         }
 
         public void PersistToggleChanged(bool isOn)

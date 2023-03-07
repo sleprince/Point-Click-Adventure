@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject loadingPanel;
     public GameObject pausePanel;
+    public Toggle musicSwitch;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,9 @@ public class GameManager : MonoBehaviour
 
         //DialogueSystem.Instance.InspectMessage(intro);
 
+        //neeeded to make the toggle functionality work properly
+        musicSwitch.isOn = true;
+        musicSwitch.isOn = false;
     }
 
     void Update()
