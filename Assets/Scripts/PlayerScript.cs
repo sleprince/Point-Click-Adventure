@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI; //needed to use Unity's AI functions.
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
