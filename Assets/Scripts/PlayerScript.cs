@@ -272,12 +272,12 @@ public class PlayerScript : MonoBehaviour
         {
             yield return null; //delays the coroutine while player hasn't arrived.
         }
-        
 
-        
-        
-        Cursor.SetCursor(mouseOptions[3].cursor, hotSpot, cursorMode); //set cursor back to walk after interacting.
-        i = 3; //after interacting revert to normal mouse pointer integer.
+
+
+        //decided not to use this, where it reverts to walking after completing an action
+        //Cursor.SetCursor(mouseOptions[3].cursor, hotSpot, cursorMode); //set cursor back to walk after interacting.
+        //i = 3; //after interacting revert to normal mouse pointer integer.
     }
 
     [System.Serializable]

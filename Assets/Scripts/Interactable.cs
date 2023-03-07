@@ -24,7 +24,7 @@ public class Interactable : MonoBehaviour
     //Interactable.IAction [] inspectActions;
 
 
-    private float distancePosition = 1f; //how far away from interactable player stops.
+    private float distancePosition = 1.5f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
 
@@ -133,36 +133,11 @@ public class Interactable : MonoBehaviour
             otherActions[i].Act();
         }
 
+        //decided to take this out, where it reverts to walking after completing an action
+        //pScript.I = 3;
 
-        pScript.I = 3;
-
-            // 2D array, i.e. array of references to arrays. needs these to be in scope but it sounds like they're global anyway
-            //IAction[][] allActions = { inspectActions, messageActions, itemActions, activateActions };
-
-            //foreach (IAction[] actionArray in allActions) {
-            //    foreach (IAction action in actionArray) {
-            //        action.Act();
-            //     }
-            // }
 
 
     }
-    
-    
-    //public interface IAction
-   // void  Act();
-   // }
-
-
-    /*
-    [System.Serializable]
-    public class ActionTypes
-    {
-        [SerializeField] MessageAction[] messageActions;
-        [SerializeField] InspectAction[] inspectActions;
-        [SerializeField] ActivateAction[] ActivateAction;
-        [SerializeField] ItemAction[] ItemAction;
-    }
-    */
 
 }//class end
