@@ -71,24 +71,28 @@ public class InventoryItemUI : MonoBehaviour
        
     }
 
+    void ShowDetails()
+    {
+        invSystemUI.descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = thisItem.ItemDesc;
+    }
+
     void Update()
     {
 
         //DescriptionShow();
-
 
         
 
     }
 
 
-    private void OnMouseOver(Item item)
+    public void OnMouseOver()
     {
-        invSystemUI.descriptionPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = item.ItemDesc;
+        ShowDetails();
         invSystemUI.descriptionPanel.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnMouseExit()
     {
         invSystemUI.descriptionPanel.SetActive(false);
     }
