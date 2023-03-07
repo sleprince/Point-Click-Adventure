@@ -24,10 +24,6 @@ public class CameraTrigger : MonoBehaviour
         //Debug.Log(name + " colliided with " + other.gameObject.name);
         //collided with
 
-        Scene mummy = SceneManager.GetActiveScene();
-
-        if (mummy.name == "Mummy")
-            game.Win();
 
 
             if (!exiting)

@@ -11,6 +11,7 @@ public class OnMouseOverLabel : MonoBehaviour
     //private bool _viewAll;
     private new string name;
     private Button btn;
+    private bool showingAll;
 
     PlayerScript player;
 
@@ -47,10 +48,18 @@ public class OnMouseOverLabel : MonoBehaviour
     public void ShowAll()
     {
 
-                if (!_labelText.activeSelf)
-                    _labelText.SetActive(true); 
-                else
-                    _labelText.SetActive(false);
+
+        if (!_labelText.activeSelf)
+        {
+            showingAll = true;
+            _labelText.SetActive(true);
+        }
+        else
+        {
+            showingAll = false;
+            _labelText.SetActive(false);
+        }
+
 
         
 
@@ -60,7 +69,7 @@ public class OnMouseOverLabel : MonoBehaviour
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
         //Debug.Log("Mouse is over GameObject.");
-        if (!player.InventoryUI.activeSelf)
+        if (!player.InventoryUI.activeSelf && !showingAll)
             _labelText.SetActive(true);
     }
 
@@ -68,7 +77,7 @@ public class OnMouseOverLabel : MonoBehaviour
     {
         //The mouse is no longer hovering over the GameObject so output this message each frame
         //Debug.Log("Mouse is no longer on GameObject.");
-        if (!player.InventoryUI.activeSelf)
+        if (!player.InventoryUI.activeSelf && !showingAll)
             _labelText.SetActive(false);
     }
 }
