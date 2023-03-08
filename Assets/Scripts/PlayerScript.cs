@@ -38,6 +38,7 @@ public class PlayerScript : MonoBehaviour
     public List<MouseOptions> mouseOptions = new List<MouseOptions>();
 
     public int I { get { return i; } set { i = value; } } //editable value, public getter.
+    public int num { get { return i; } } //public getter for i
 
 
     public static PlayerScript instance;
@@ -73,6 +74,7 @@ public class PlayerScript : MonoBehaviour
         
         Cursor.SetCursor(mouseOptions[3].cursor, hotSpot, cursorMode); //set cursor to walk to start with.
 
+
     }
 
     public void SwitchAction()
@@ -91,6 +93,9 @@ public class PlayerScript : MonoBehaviour
     {
         agent.speed = 7f;
 
+        if(i > -1)
+            switchText.text = mouseOptions[i].cursorType;
+
 
         if (Input.GetMouseButtonDown(1)) //right mouse button to cycle between different cursors for different action types.
         {
@@ -99,6 +104,7 @@ public class PlayerScript : MonoBehaviour
             if (i == 4)
                 i = 0;
             Cursor.SetCursor(mouseOptions[i].cursor, hotSpot, cursorMode);
+
             
 
         }

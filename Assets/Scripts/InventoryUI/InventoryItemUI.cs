@@ -11,6 +11,7 @@ public class InventoryItemUI : MonoBehaviour
     private InventorySystemUI invSystem; //parent class that handles redrawing changes in items held
 
     private static Item chosenItem; //has to be static for ItemAction to access it.
+    public static bool itemMode;
 
     //[SerializeField] private Texture2D itemCursor; //the cursor that the button will change the mouse to.
     [SerializeField] private Image itemImage; //the image that will be attached to the button
@@ -64,6 +65,7 @@ public class InventoryItemUI : MonoBehaviour
             chosenItem = itm;
             //set cursor to item mode integer
             _pScript.I = 2;
+            itemMode = true;
             
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using static Cinemachine.CinemachineTriggerAction.ActionSettings;
 
 public class Interactable : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Interactable : MonoBehaviour
     //Interactable.IAction [] inspectActions;
 
 
-    private float distancePosition = 1.5f; //how far away from interactable player stops.
+    private float distancePosition = 2f; //how far away from interactable player stops.
 
     NavMeshAgent agent;
 
@@ -128,13 +129,20 @@ public class Interactable : MonoBehaviour
                 
             }
 
-        for (int i = 0; i < otherActions.Length; i++) //do actions that can happen whichever mouse curser is selected.
-        {
-            otherActions[i].Act();
-        }
+        //for (int i = 0; i < otherActions.Length; i++) //do actions that can happen whichever mouse curser is selected.
+       //{
+       //     otherActions[i].Act();
+       // }
 
         //decided to take this out, where it reverts to walking after completing an action
         //pScript.I = 3;
+
+        if (InventoryItemUI.itemMode == true)
+        {
+            Cursor.SetCursor(pScript.mouseOptions[3].cursor, pScript.hotSpot, pScript.cursorMode);
+            pScript.I = 3;
+            InventoryItemUI.itemMode = false;
+        }
 
 
 

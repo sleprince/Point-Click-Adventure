@@ -2754,7 +2754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5ebebc0fed1fed84ba38bf4732355cd1, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ebebc0fed1fed84ba38bf4732355cd1, type: 3}
       propertyPath: m_LocalScale.x
@@ -10208,7 +10208,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: af4073d8f2a2e88409b4f2548f5f8d6e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af4073d8f2a2e88409b4f2548f5f8d6e, type: 3}
       propertyPath: m_LocalScale.x
@@ -16386,7 +16386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageActions: []
-  inspectActions: []
+  inspectActions:
+  - {fileID: 814666645}
   activateActions:
   - {fileID: 814666645}
   itemActions: []
@@ -23250,12 +23251,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageActions: []
-  inspectActions: []
+  inspectActions:
+  - {fileID: 1243936774}
   activateActions:
   - {fileID: 1243936774}
   itemActions: []
-  otherActions:
-  - {fileID: 1243936774}
+  otherActions: []
 --- !u!65 &1243936776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42504,7 +42505,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c6425b4a4281b48cb8a032fe89a8ab28, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.021
+  m_Volume: 0.501
   m_Pitch: 1
   Loop: 1
   Mute: 1
@@ -47926,7 +47927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0d933dfdb6ac6545bc634085da4ed5e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0d933dfdb6ac6545bc634085da4ed5e, type: 3}
       propertyPath: m_LocalScale.x
@@ -48613,7 +48614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dcaab56c0f5cc094288a8248c8f2f0ae, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dcaab56c0f5cc094288a8248c8f2f0ae, type: 3}
       propertyPath: m_LocalScale.x
@@ -63383,6 +63384,10 @@ PrefabInstance:
       propertyPath: dialogueWindow
       value: 
       objectReference: {fileID: 2128000632}
+    - target: {fileID: 4671198847049089076, guid: 115e88c87b3d5634bbfd45511b8f5da1, type: 3}
+      propertyPath: mouseOptions.Array.data[3].cursorType
+      value: Walk/Use
+      objectReference: {fileID: 0}
     - target: {fileID: 4671198847049089078, guid: 115e88c87b3d5634bbfd45511b8f5da1, type: 3}
       propertyPath: m_CollisionDetection
       value: 3

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public Toggle musicSwitch;
 
+    PlayerScript pScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
         //neeeded to make the toggle functionality work properly
         musicSwitch.isOn = true;
         musicSwitch.isOn = false;
+
+        pScript = PlayerScript.GetInstance();
     }
 
     void Update()
@@ -71,6 +75,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
+        pScript.SwitchAction(); //seems to be needed to switch off walk/use and back again at start.
+        pScript.SwitchAction();
+        pScript.SwitchAction();
+        pScript.SwitchAction();
+
+
         loadingPanel.SetActive(false);
 
         //while (!Input.GetMouseButtonDown(0))
@@ -81,7 +91,11 @@ public class GameManager : MonoBehaviour
         //Scene scene = SceneManager.GetActiveScene();
 
         //if (scene.name == "MainScene")
-            interact.InspectActions[0].Act();
+
+        //yield return new WaitForSeconds(1f);
+
+
+        interact.InspectActions[0].Act();
 
     }
 
