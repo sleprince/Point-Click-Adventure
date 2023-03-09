@@ -72,7 +72,7 @@ public class Interactable : MonoBehaviour
         //yield return new WaitForSeconds(2f);
 
         //move player back here
-        player.Agent.destination = agent.destination + (new Vector3(0, 0, 0.2f));
+        player.Agent.destination = agent.destination + (new Vector3(0, 0, 1f));
 
         player.SetDirection(transform.position);
 
