@@ -182,7 +182,7 @@ public class PlayerScript : MonoBehaviour
         if (Physics.Raycast(camToScreen, out hit, Mathf.Infinity))
         {
 
-            effect.transform.position = hit.point; //move particle effect to ray hit point and play.
+            effect.transform.position = hit.point; //move particle effect to ray hit point
             
             if(hit.collider.gameObject.layer != 2) //if the layer is not ignore raycast layer
                 
@@ -193,7 +193,7 @@ public class PlayerScript : MonoBehaviour
                     && hit.collider.gameObject.tag != "UI") //if what it hit is not null, and not on the ignore raycast layer
             {
 
-                effect.Play();
+                effect.Play(); //trigger the particle effect where player clicked
 
                 //temporary variable interactive is the Interactable class script that is attached to the the 
                 //object the raycast is hitting.
@@ -242,13 +242,13 @@ public class PlayerScript : MonoBehaviour
 
     void MovePlayer(Vector3 targetPosition)
     {
-        turning = false;
+        turning = false; //this and the next line was to stop a stuttering turning bug
         
         agent.isStopped = false;
 
-        agent.SetDestination(targetPosition);
+        agent.SetDestination(targetPosition); //set player navagent destination to hit.point defined earlier
 
-        DialogueSystem.Instance.HideDialog();
+        DialogueSystem.Instance.HideDialogue(); //hide the Dialogueue UI when moving
 
     }
 

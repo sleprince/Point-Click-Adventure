@@ -41,7 +41,7 @@ public class DialogueSystem : MonoBehaviour
     }
 
     public void ShowMessages(List<string> messages, bool dialogue, List<Actions> yesActions = null, List<Actions> noActions = null, string yes = "Yes", string no = "No")
-    // = null is so that when there are no yes,no actions in the dialog we don't have to send anything over.
+    // = null is so that when there are no yes,no actions in the dialogue we don't have to send anything over.
     {
 
 
@@ -57,7 +57,7 @@ public class DialogueSystem : MonoBehaviour
 
         conversing = true; //bool used so that the player will not be able to move while conversing.
 
-        if (dialogue) //if the message includes dialog options.
+        if (dialogue) //if the message includes dialogue options.
         {
             yesText.text = yes;
             yesButton.onClick.RemoveAllListeners();
@@ -167,7 +167,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void HideDialog() //for if you walk off during the dialogue.
+    public void HideDialogue() //for if you walk off during the Dialogue.
     {
         conversing = false;
         panel.SetActive(false);
